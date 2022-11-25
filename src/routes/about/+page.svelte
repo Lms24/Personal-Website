@@ -4,6 +4,22 @@
   import H2 from '$lib/components/h2.svelte';
   import Section from '$lib/components/section.svelte';
   import TextLink from '$lib/components/text-link.svelte';
+  import {
+    ANGULAR,
+    DOTNET,
+    JAVA,
+    JAVASCRIPT,
+    JSF,
+    KOTLIN,
+    MSSQL,
+    NODEJS,
+    PYTHON,
+    REACT,
+    RUST,
+    SVELTE,
+    TYPESCRIPT,
+    VUE
+  } from '$lib/misc/tags';
   import CvItem from './cv-item.svelte';
   import PubItem from './pub-item.svelte';
 </script>
@@ -36,17 +52,7 @@
     timeFrame="Since Feb 2022"
     location="Vienna, AT"
     url="https://sentry.io/welcome/"
-    languages={[
-      { name: 'JavaScript', color: 'bg-yellow-300' },
-      { name: 'TypeScript', color: 'bg-blue-400' },
-      { name: 'Angular', color: 'bg-red-400' },
-      { name: 'Svelte', color: 'bg-orange-400' },
-      { name: 'Vue', color: 'bg-green-400' },
-      { name: 'React', color: 'bg-sky-400' },
-      { name: 'Node', color: 'bg-green-700' },
-      { name: 'Rust', color: 'bg-orange-500' },
-      { name: 'Python', color: 'bg-yellow-400' }
-    ]}
+    languages={[JAVASCRIPT, TYPESCRIPT, ANGULAR, SVELTE, VUE, NODEJS, REACT, RUST, PYTHON]}
   >
     <ul class="list-disc">
       <li>
@@ -78,12 +84,7 @@
     timeFrame="Jul 2020 - Dec 2021"
     url="https://www.prime-software.at/"
     location="Graz, AT"
-    languages={[
-      { name: 'TypeScript', color: 'bg-blue-400' },
-      { name: 'Angular', color: 'bg-red-400' },
-      { name: 'Java', color: 'bg-red-300' },
-      { name: '.NET', color: 'bg-violet-400' }
-    ]}
+    languages={[TYPESCRIPT, ANGULAR, JAVA, DOTNET]}
   >
     <ul class="list-disc">
       <li>
@@ -106,11 +107,7 @@
     position="Fullstack Developer"
     timeFrame="Oct 2016 - Feb 2020"
     location="Graz, AT"
-    languages={[
-      { name: 'Java', color: 'bg-red-400' },
-      { name: 'JSF', color: 'bg-red-300' },
-      { name: 'MSSQL', color: 'bg-yellow-400' }
-    ]}
+    languages={[JAVA, JSF, MSSQL]}
   >
     <ul class="list-disc">
       <li>
@@ -130,7 +127,7 @@
     timeFrame="Mar 2019 - Jul 2019"
     url="https://www.tugraz.at"
     location="Graz, AT"
-    languages={[{ name: 'Kotlin', color: 'bg-red-400' }]}
+    languages={[KOTLIN]}
   >
     <ul class="list-disc">
       <li>Research and Development in the field of Software Maintenance</li>
