@@ -13,7 +13,12 @@
 >
   <slot name="image" />
   <div class="flex flex-col text-sm justify-around h-full">
-    <h2 class="text-lg font-bold md:text-start text-center">{title}</h2>
+    <h2
+      id={title.replace(' ', '-').toLowerCase()}
+      class="text-lg font-bold md:text-start text-center"
+    >
+      {title}
+    </h2>
     <slot name="description" />
   </div>
   <div class="flex flex-row flex-wrap w-fit gap-2 justify-center items-center">
