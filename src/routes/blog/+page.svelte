@@ -1,1 +1,1 @@
-Apparently I like writing more than talking
+This is my blog
