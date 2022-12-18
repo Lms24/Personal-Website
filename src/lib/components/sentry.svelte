@@ -5,7 +5,7 @@
 <div class={classes}>
   <svg class="__sntry__ css-lfbo6j e10nushx4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 44"
     ><defs
-      ><style type="text/css">
+      ><style>
         @media (prefers-color-scheme: dark) {
           path.__sntry__ {
             fill: #ffffff !important;

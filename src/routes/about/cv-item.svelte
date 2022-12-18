@@ -22,7 +22,7 @@
   <div class="flex md:min-w-[14em] md:max-w-[14em] md:block">
     <div>
       {#if url !== undefined}
-        <h3 class="ml-[-.5em]">
+        <h3>
           <TextLink href={url}><span class="font-bold text-lg">{company}</span></TextLink>
         </h3>
       {:else}

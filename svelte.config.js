@@ -20,6 +20,12 @@ const config = {
     files: {
       lib: './src/lib'
     }
+  },
+
+  vitePlugin: {
+    experimental: {
+      inspector: true
+    }
   }
 };
 

@@ -18,7 +18,7 @@
       I'm a Software Enginner with a passion for creating tools for developers
       <br />
       <span class="text-sm opacity-80"
-        >SDK Engineer at<TextLink href="https://sentry.io/welcome/">Sentry.io</TextLink></span
+        >SDK Engineer at <TextLink href="https://sentry.io/welcome/">Sentry.io</TextLink></span
       >
     </p>
   </div>

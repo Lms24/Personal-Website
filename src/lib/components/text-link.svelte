@@ -5,6 +5,6 @@
 
 <a
   {href}
-  class="py-1 px-2 hover:text-orange-400 hover:bg-gray-200 hover:bg-opacity-30 rounded-xl transition-all duration-300 cursor-pointer {bold &&
-    'font-bold'}"><slot /></a
+  class="hover:text-orange-400 hover:bg-gray-200 hover:bg-opacity-30 hover:m-[-.5rem] hover:p-2 rounded-xl transition-all duration-300 cursor-pointer {bold &&
+    'font-bold'}"><span><slot /></span></a
 >
