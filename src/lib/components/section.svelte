@@ -7,6 +7,10 @@
     'from-[#b43a42]',
     'via-[#fd481d]',
     'to-[#fcb045]',
+    'dark:bg-gradient-to-r',
+    'dark:from-[#52191d]',
+    'dark:via-[#7a2410]',
+    'dark:to-[#73501f]',
     'text-white'
   ];
   const classesOdd: string[] = [];

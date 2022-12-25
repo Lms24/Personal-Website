@@ -229,7 +229,8 @@
   <H2>Hobbies</H2>
 
   <div
-    class="w-full bg-white rounded-lg shadow-lg p-4 py-6 max-w-screen-xl justify-center items-center flex gap-4 flex-wrap text-sm"
+    class="w-full bg-white rounded-lg shadow-lg p-4 py-6 max-w-screen-xl justify-center items-center flex gap-4 flex-wrap text-sm
+    dark:bg-gray-700 dark:shadow-gray-900"
   >
     <Badge>Music</Badge>
     <Badge color="bg-green-400">Guitars</Badge>

@@ -6,7 +6,8 @@
 
 <a href={url}>
   <article
-    class="flex flex-row items-center bg-white shadow-lg w-full max-w-screen-xl rounded-lg hover:scale-105 transition-transform"
+    class="flex flex-row items-center bg-white shadow-lg w-full max-w-screen-xl rounded-lg hover:scale-105 transition-transform
+    dark:bg-gray-700 dark:shadow-gray-900"
   >
     {#if type === 'paper'}
       <img

@@ -6,7 +6,7 @@
   import WorkItem from './work-item.svelte';
 </script>
 
-<Section even={true}>
+<Section even={true} styleClass="min-h-[40vh]">
   <img
     class="rounded-full w-1/2 h-1/2 md:w-1/5 md:h-1/5 object-fill"
     src="/ls.jpg"

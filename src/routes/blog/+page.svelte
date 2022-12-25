@@ -9,7 +9,9 @@
   export let data: PageData;
 </script>
 
-<div class="p-4 prose max-w-none flex-col justify-center items-center w-full">
+<div
+  class="p-4 prose max-w-none flex-col justify-center items-center w-full dark:prose-invert h-[calc(100vh-120px)]"
+>
   <h1>Blog</h1>
 
   <p>Sometimes I like to rant about things...</p>

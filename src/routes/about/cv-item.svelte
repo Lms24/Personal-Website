@@ -17,7 +17,8 @@
 </script>
 
 <article
-  class="flex flex-col md:flex-row w-full max-w-screen-xl bg-white p-8 rounded-lg shadow-md gap-8"
+  class="flex flex-col md:flex-row w-full max-w-screen-xl bg-white p-8 rounded-lg shadow-md gap-8
+  dark:bg-gray-700 dark:shadow-gray-900"
 >
   <div class="flex md:min-w-[14em] md:max-w-[14em] md:block">
     <div>
