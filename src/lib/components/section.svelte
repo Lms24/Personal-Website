@@ -2,7 +2,13 @@
   export let styleClass: string | undefined = '';
   export let even: boolean = false;
 
-  const classesEven = ['bg-green-800', 'text-white'];
+  const classesEven = [
+    'bg-gradient-to-r',
+    'from-[#b43a42]',
+    'via-[#fd481d]',
+    'to-[#fcb045]',
+    'text-white'
+  ];
   const classesOdd: string[] = [];
   const classesDefault = ['px-2 py-8 md:px-8 md:py-8 flex flex-col md:flex-row items-center gap-8'];
 
