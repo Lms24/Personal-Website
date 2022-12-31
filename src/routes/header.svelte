@@ -9,8 +9,8 @@
 <header
   class="flex flex-row md:gap-12 md:justify-start justify-between 
   bg-gradient-to-r
-   from-red-800 to-orange-400 text-white
-   dark:from-[#2f0d0f] dark:to-[#3f2b10]"
+   from-[#942f36] to-[#dd993b] text-white
+   dark:from-[#0e1522] dark:to-[#1e3145]"
 >
   <nav class="flex gap-4 w-full  p-4 justify-around sm:justify-center md:gap-12">
     <a href="/home">Home</a>
