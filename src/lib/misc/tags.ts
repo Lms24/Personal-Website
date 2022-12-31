@@ -5,10 +5,10 @@ export type Tag = {
 
 /* Programming Languages */
 export const TYPESCRIPT: Tag = { name: 'TypeScript', color: 'bg-blue-400' };
-export const JAVASCRIPT: Tag = { name: 'JavaScript', color: 'bg-yellow-400' };
+export const JAVASCRIPT: Tag = { name: 'JavaScript', color: 'bg-yellow-300' };
 export const JAVA: Tag = { name: 'Java', color: 'bg-red-500' };
 export const KOTLIN: Tag = { name: 'Kotlin', color: 'bg-red-400' };
-export const PYTHON: Tag = { name: 'Python', color: 'bg-yellow-600' };
+export const PYTHON: Tag = { name: 'Python', color: 'bg-yellow-400' };
 export const RUST: Tag = { name: 'Rust', color: 'bg-orange-500' };
 
 /* Web Frontend */
