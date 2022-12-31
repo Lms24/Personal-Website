@@ -1,4 +1,6 @@
 <script lang="ts">
+  import CvOverlay from './cv-overlay.svelte';
+
   import Badge from '$lib/components/badge.svelte';
   import TextLink from '$lib/components/text-link.svelte';
 
@@ -11,15 +13,25 @@
   export let languages: { name: string; color: string }[] | undefined = undefined;
 
   let expanded = false;
+  let overlay = true;
+
   function toggle() {
     expanded = !expanded;
+  }
+
+  function toggleOverlay() {
+    overlay = !overlay;
   }
 </script>
 
 <article
   class="flex flex-col md:flex-row w-full max-w-screen-xl bg-white p-8 rounded-lg shadow-md gap-8
-  dark:bg-gray-700 dark:shadow-gray-900"
+  dark:bg-gray-700 dark:shadow-gray-900 relative cursor-pointer hover:scale-[101%] transition-all duration-200"
+  on:click={toggleOverlay}
+  on:keypress={toggleOverlay}
 >
+  <CvOverlay {overlay} {company} {timeFrame} />
+
   <div class="flex md:min-w-[14em] md:max-w-[14em] md:block">
     <div>
       {#if url !== undefined}

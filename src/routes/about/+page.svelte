@@ -33,8 +33,8 @@
     <p class="mt-4">
       I'm a software engineer who loves to work with modern web technologies. I enjoy creating tools
       for developers and I've specialized in SDK development, observability and testing. I'm
-      currently working at<TextLink href="https://sentry.io/welcome/">sentry.io</TextLink>where I
-      maintain Sentry's 15 JavaScript SDKs together with my amazing team.
+      currently working at <TextLink href="https://sentry.io/welcome/">sentry.io</TextLink> where I maintain
+      Sentry's 15 JavaScript SDKs together with my amazing team.
     </p>
     <p>
       Previously, I studied computer science at Graz University of Technology while working as a web
@@ -56,17 +56,16 @@
   >
     <ul class="list-disc">
       <li>
-        Working on<TextLink href="https://github.com/getsentry/sentry-javascript"
+        Working on <TextLink href="https://github.com/getsentry/sentry-javascript"
           ><span class="font-bold">Sentry's JavaScript SDKs</span></TextLink
-        >- We support more than 15 frontend and backend JS frameworks.
+        > - We support more than 15 frontend and backend JS frameworks.
       </li>
       <li class="mt-1">
         Actively engaging with the open source community on GitHub, triaging incoming issues and
         requests.
       </li>
       <li class="mt-1">
-        I took ownership of Sentry's Angular and Svelte SDK, specializing in the respective
-        frameworks.
+        I own Sentry's Angular and Svelte SDKs, specializing in the respective frameworks.
       </li>
       <li class="mt-1">
         I contribute specifications to multiple company-wide initiatives, such as distributed trace

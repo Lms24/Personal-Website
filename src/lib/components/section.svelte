@@ -8,9 +8,9 @@
     'via-[#fd481d]',
     'to-[#fcb045]',
     'dark:bg-gradient-to-r',
-    'dark:from-[#52191d]',
-    'dark:via-[#7a2410]',
-    'dark:to-[#73501f]',
+    'dark:from-[#141E30]',
+    // 'dark:via-[#203A43]',
+    'dark:to-[#243B55]',
     'text-white'
   ];
   const classesOdd: string[] = [];
