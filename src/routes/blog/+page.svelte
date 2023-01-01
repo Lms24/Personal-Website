@@ -1,31 +1,21 @@
 <script lang="ts">
-  import H1 from '$lib/components/h1.svelte';
-  import TextLink from '$lib/components/text-link.svelte';
-  import type { BlogPost } from '$lib/data/blog-post';
+  import Section from '$lib/components/section.svelte';
+  import PubItem from '../about/pub-item.svelte';
   import type { PageData } from './$types';
-  type BlogPageData = {
-    blogposts: BlogPost[];
-  };
+
   export let data: PageData;
 </script>
 
-<div
-  class="p-4 prose max-w-none flex-col justify-center items-center w-full dark:prose-invert h-[calc(100vh-120px)]"
+<Section even
+  ><div class="flex flex-row items-stretch w-full text-center justify-center py-8">
+    Sometimes, I like to rant about things...
+  </div></Section
 >
-  <h1>Blog</h1>
 
-  <p>Sometimes I like to rant about things...</p>
-
-  <ul class="list-none">
-    {#each data.blogposts as post}
-      <li>
-        <h2 class="mb-0.5">
-          <TextLink href={`/blog/${post.slug}`}>
-            {post.meta.title}
-          </TextLink>
-        </h2>
-        <span class="text-sm">Published {post.meta.date.toLocaleDateString()}</span>
-      </li>
-    {/each}
-  </ul>
+<div class="p-4 max-w-none flex flex-col justify-center  gap-8  w-full items-stretch">
+  {#each data.blogposts as post}
+    <PubItem type="blog" title={post.meta.title} url={`/blog/${post.slug}`} italic={false}>
+      <small>Published: {post.meta.date?.toLocaleDateString()}</small>
+    </PubItem>
+  {/each}
 </div>

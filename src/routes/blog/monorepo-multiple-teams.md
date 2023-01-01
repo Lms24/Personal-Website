@@ -1,5 +1,5 @@
 ---
-title: Giving Up Control - When Multiple Teams work on one Repository
+title: Giving Up Control - When Multiple Teams work on one Repository longer title
 date: '2022-12-10'
 ---
 

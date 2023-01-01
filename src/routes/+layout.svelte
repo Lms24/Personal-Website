@@ -8,7 +8,7 @@
 <div class:dark={$darkmode}>
   <div class="min-h-screen dark:bg-gray-800 dark:text-white relative">
     <Header />
-    <main style="flex: 1" class="min-h-[calc(100vh-120px)]">
+    <main class="min-h-[calc(100vh-120px)]">
       <slot />
     </main>
     <Footer />
