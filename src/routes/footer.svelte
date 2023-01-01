@@ -2,7 +2,10 @@
   import TextLink from '$lib/components/text-link.svelte';
 </script>
 
-<footer class=" px-4 pt-4 pb-1 flex flex-col md:flex-row justify-between items-center">
+<footer
+  class=" px-4 pt-4 pb-1 flex flex-col md:flex-row justify-between items-center
+               "
+>
   <p class="text-xs mt-[2px]">© Lukas Stracke, 2022</p>
   <div class="flex flex-row gap-4 md:gap-12 items-center">
     <TextLink href="https://twitter.com/ThunderStrack24">

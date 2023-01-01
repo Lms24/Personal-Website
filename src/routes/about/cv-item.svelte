@@ -20,7 +20,9 @@
   }
 
   function toggleOverlay() {
-    overlay = !overlay;
+    if (!expanded) {
+      overlay = !overlay;
+    }
   }
 </script>
 

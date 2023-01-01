@@ -175,8 +175,8 @@
     <ul class="list-disc">
       <li>Bachelor's degree with focus on broad and intensive education in computer science.</li>
       <li class="mt-1">
-        Courses around: Algorithms · Software Engineering · Web · IT Security · AI & Data Science ·
-        Computer Graphics · Operating System Development
+        Courses around: Algorithms, Software Engineering, Web, IT Security, AI & Data Science,
+        Computer Graphics, Operating System Development
       </li>
       <li class="mt-1">
         Bachelor's thesis

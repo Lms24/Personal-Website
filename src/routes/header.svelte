@@ -9,7 +9,7 @@
 <header
   class="flex flex-row md:gap-12 md:justify-start justify-between 
   bg-gradient-to-r
-   from-[#942f36] to-[#dd993b] text-white
+   from-[#942f36] via-[#c23917] to-[#dd993b] text-white
    dark:from-[#0e1522] dark:to-[#1e3145]"
 >
   <nav class="flex gap-4 w-full  p-4 justify-around sm:justify-center md:gap-12">

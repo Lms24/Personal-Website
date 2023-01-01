@@ -27,7 +27,7 @@
 <Section styleClass="md:flex-col">
   <h2>Check out some of my work:</h2>
   <div class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between lg:justify-around w-full">
-    <WorkItem title="Sentry SDK" description="Sentry JS SDK Maintainer">
+    <WorkItem title="Sentry SDKs" description="Sentry JS SDK Maintainer">
       <Sentry />
     </WorkItem>
     <WorkItem title="Henri" description="Ambulance Shift Diary">
