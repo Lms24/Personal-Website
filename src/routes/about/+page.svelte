@@ -1,4 +1,5 @@
 <script>
+  import Separator from '$lib/components/Separator.svelte';
   import Badge from '$lib/components/badge.svelte';
   import H1 from '$lib/components/h1.svelte';
   import H2 from '$lib/components/h2.svelte';
@@ -24,26 +25,30 @@
   import PubItem from './pub-item.svelte';
 </script>
 
-<Section even={true} styleClass="flex flex-row">
+<Section styleClass="flex flex-row">
   <div>
-    <img class="rounded-full" src="/ls.jpg" alt="Lukas Stracke" />
+    <img class="rounded-full p-8" src="/ls.jpg" alt="Lukas Stracke" />
   </div>
-  <div class="flex flex-col items-center w-full text-center gap-4">
-    <H1>Lukas Stracke</H1>
+  <div class="flex flex-col items-center w-full md:text-center gap-4">
+    <H1>About Me</H1>
     <p class="mt-4">
       I'm a software engineer who loves to work with modern web technologies. I enjoy creating tools
       for developers and I've specialized in SDK development, observability and testing. I'm
       currently working at <TextLink href="https://sentry.io/welcome/">sentry.io</TextLink> where I maintain
       Sentry's 15 JavaScript SDKs together with my amazing team.
-    </p>
-    <p>
       Previously, I studied computer science at Graz University of Technology while working as a web
       developer on JavaEE and Angular projects.
+    </p>
+    <p>
+      Aside from Software, you'll find me making music, flight simming and enjoying life in the
+      beautiful city of Vienna. By the way, I'm a dog person!
     </p>
   </div>
 </Section>
 
-<Section styleClass="w-full md:flex-col justify-center">
+<Separator />
+
+<Section styleClass="w-full md:flex-col justify-center items-center">
   <H2>Work Experience</H2>
 
   <CvItem
@@ -57,7 +62,7 @@
     <ul class="list-disc">
       <li>
         Working on <TextLink href="https://github.com/getsentry/sentry-javascript"
-          ><span class="font-bold">Sentry's JavaScript SDKs</span></TextLink
+          >Sentry's JS SDKs</TextLink
         > - We support more than 15 frontend and backend JS frameworks.
       </li>
       <li class="mt-1">
@@ -68,11 +73,7 @@
         I own Sentry's Angular and Svelte SDKs, specializing in the respective frameworks.
       </li>
       <li class="mt-1">
-        I contribute specifications to multiple company-wide initiatives, such as distributed trace
-        propagation. My reference implementation served as a template for all other SDKs.
-      </li>
-      <li class="mt-1">
-        I drive multiple projects, such as our unified bundler plugins and the Svelte SDK.
+        I drive multiple projects, such as our unified bundler plugins and the Svelte SDKs.
       </li>
     </ul>
   </CvItem>
@@ -83,7 +84,7 @@
     timeFrame="Jul 2020 - Dec 2021"
     url="https://www.prime-software.at/"
     location="Graz, AT"
-    languages={[TYPESCRIPT, ANGULAR, JAVA, DOTNET]}
+    languages={[ANGULAR, JAVA, DOTNET]}
   >
     <ul class="list-disc">
       <li>
@@ -186,7 +187,7 @@
   </CvItem>
 
   <CvItem company="BG G.I.B.S. Graz" position="Secondary/High School" url="https://www.gibs.at/">
-    <ul class="flex flex-col justify-center list-disc">
+    <ul class="list-disc">
       <li>International school with classes taught in English</li>
     </ul>
   </CvItem>
@@ -221,14 +222,14 @@
     url="https://www.vuemastery.com/conferences/vueconf-us-2022/know-your-components/"
     type="talk"
   >
-    Lightning Talk on how investigating the lifecycle of Vue components helps identifying and
-    resolving performance issues.
+    Lightning Talk on how investigating the lifecycle of Vue components helps identify and
+    resolve performance issues.
   </PubItem>
 
   <H2>Hobbies</H2>
 
   <div
-    class="w-full bg-white rounded-lg shadow-lg p-4 py-6 max-w-screen-xl justify-center items-center flex gap-4 flex-wrap text-sm
+    class="w-full bg-white rounded-lg shadow-sm p-4 py-6 max-w-screen-xl justify-center items-center flex gap-4 flex-wrap text-xs
     dark:bg-gray-700 dark:shadow-gray-900"
   >
     <Badge>Music</Badge>

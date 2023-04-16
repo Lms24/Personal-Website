@@ -1,53 +1,30 @@
 <script lang="ts">
+  import IconWrapper from '$lib/components/iconWrapper.svelte';
+  import FaBookOpen from 'svelte-icons/fa/FaBookOpen.svelte';
+  import FaPen from 'svelte-icons/fa/FaPen.svelte';
+  import FaMicrophone from 'svelte-icons/fa/FaMicrophone.svelte';
+  import TextLink from '$lib/components/text-link.svelte';
   export let title: string;
   export let url: string;
   export let type: 'paper' | 'talk' | 'blog' | 'other';
-  export let italic: boolean = true;
 </script>
 
-<a href={url}>
-  <article
-    class="flex flex-row items-center bg-white shadow-lg w-full max-w-screen-xl rounded-lg hover:scale-[101%] transition-transform
-    dark:bg-gray-700 dark:shadow-gray-900"
-  >
+<article
+  class="px-8 py-4 flex flex-row self-center items-center bg-white shadow-sm w-full max-w-screen-xl rounded-lg 
+    dark:bg-gray-700 dark:shadow-gray-900 gap-8"
+>
+  <IconWrapper styleClass="hidden md:flex">
     {#if type === 'paper'}
-      <img
-        class="p-4 dark:hidden md:block"
-        src="https://img.icons8.com/material-outlined/48/null/literature--v1.png"
-        alt="Publication Icon"
-      />
-      <img
-        class="p-4 hidden dark:md:block"
-        src="https://img.icons8.com/material-outlined/48/ffffff/literature--v1.png"
-        alt="Publication Icon"
-      />
+      <FaBookOpen />
     {:else if type === 'talk'}
-      <img
-        class="p-4 dark:hidden md:block"
-        src="https://img.icons8.com/material-outlined/48/null/micro.png"
-        alt="Talk Icon"
-      />
-      <img
-        class="p-4 hidden dark:md:block"
-        src="https://img.icons8.com/material-outlined/48/ffffff/micro.png"
-        alt="Talk Icon"
-      />
+      <FaMicrophone />
     {:else if type === 'blog'}
-      <img
-        class="p-4 dark:hidden md:block"
-        src="https://img.icons8.com/material-outlined/48/null/spiral-bound-booklet.png"
-        alt="Blog post Icon"
-      />
-      <img
-        class="p-4 hidden dark:md:block"
-        src="https://img.icons8.com/material-outlined/48/ffffff/spiral-bound-booklet.png"
-        alt="Blog post Icon"
-      />
+      <FaPen />
     {/if}
+  </IconWrapper>
 
-    <div class="flex flex-col gap-1 p-4">
-      <h3 class="text-lg font-bold" class:italic>{title}</h3>
-      <slot />
-    </div>
-  </article>
-</a>
+  <div class="flex flex-col gap-1">
+    <h3><TextLink href={url}>{title}</TextLink></h3>
+    <slot />
+  </div>
+</article>

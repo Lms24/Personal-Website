@@ -1,8 +1,7 @@
 <script lang="ts">
-  import CvOverlay from './cv-overlay.svelte';
+  import Languages from './TagList.svelte';
 
-  import Badge from '$lib/components/badge.svelte';
-  import TextLink from '$lib/components/text-link.svelte';
+  import HardFacts from './HardFacts.svelte';
 
   export let company: string;
   export let url: string | undefined = undefined;
@@ -27,57 +26,26 @@
 </script>
 
 <article
-  class="flex flex-col md:flex-row w-full max-w-screen-xl bg-white p-8 rounded-lg shadow-md gap-8
-  dark:bg-gray-700 dark:shadow-gray-900 relative cursor-pointer hover:scale-[101%] transition-all duration-200"
+  class="flex flex-col w-full max-w-screen-xl 
+  bg-white p-8 rounded-lg shadow-sm gap-4
+  dark:bg-gray-700 dark:shadow-gray-900 
+   transition-all duration-200"
   on:click={toggleOverlay}
   on:keypress={toggleOverlay}
 >
-  <CvOverlay {overlay} {company} {timeFrame} />
+  <!-- <CvOverlay {overlay} {company} {timeFrame} /> -->
 
-  <div class="flex md:min-w-[14em] md:max-w-[14em] md:block">
-    <div>
-      {#if url !== undefined}
-        <h3>
-          <TextLink href={url}><span class="font-bold text-lg">{company}</span></TextLink>
-        </h3>
-      {:else}
-        <h3><span class="font-bold text-lg">{company}</span></h3>
-      {/if}
-      <span class="whitespace-nowrap">{position}</span><br />
-      {#if timeFrame}
-        <span class="whitespace-nowrap text-xs">{timeFrame}</span>
-      {/if}
-      {#if location}
-        <br /><span class="whitespace-nowrap text-xs">{location}</span>
-      {/if}
-
-      {#if languages}
-        <div class="hidden md:flex flex-row flex-wrap gap-2 text-[.6em] mt-2">
-          {#each languages as { name, color }}
-            <Badge {color}>{name}</Badge>
-          {/each}
-        </div>
-      {/if}
+  <div class="flex flex-col md:flex-row gap-4">
+    <div class="min-w-[12rem] items-stretch">
+      <HardFacts {url} {company} {timeFrame} {position} {location} />
     </div>
-    <div
-      class="flex w-full justify-end items-center md:hidden cursor-pointer"
-      on:click={toggle}
-      on:keypress={toggle}
-    >
-      <img
-        src="https://img.icons8.com/material-outlined/24/null/expand-arrow--v1.png"
-        alt="Click for more details"
-      />
+
+    <div class="pl-4">
+      <slot />
     </div>
   </div>
-  <div class="{expanded ? 'block' : 'hidden'} md:flex transition-all">
-    <slot />
-    {#if languages}
-      <div class="md:hidden flex flex-row flex-wrap gap-2 text-[.6em] mt-2">
-        {#each languages as { name, color }}
-          <Badge {color}>{name}</Badge>
-        {/each}
-      </div>
-    {/if}
-  </div>
+
+  {#if languages}
+    <Languages tags={languages} />
+  {/if}
 </article>

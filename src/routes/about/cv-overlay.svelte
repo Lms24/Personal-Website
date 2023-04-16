@@ -9,7 +9,7 @@
 {#if overlay}
   <div
     class="absolute bottom-0 top-0 left-0 right-0 z-10  p-8 rounded-lg flex flex-row 
-           justify-center items-center bg-white opacity-95
+           justify-center items-center bg-white opacity-[97%]
            gap-8 group
            dark:bg-gray-700 dark:shadow-gray-900 dark:shadow-lg"
     transition:fade={{ duration: 200 }}
