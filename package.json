@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sentry/sveltekit": "^7.60.1",
 		"svelte-icons": "^2.1.0"
 	}
 }
