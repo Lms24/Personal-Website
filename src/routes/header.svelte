@@ -14,9 +14,3 @@
     <NavItem {activeRoute} name="Work" />
   </Nav>
 </header>
-
-<style>
-  .active {
-    text-decoration: underline;
-  }
-</style>

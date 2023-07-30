@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 
@@ -9,7 +9,7 @@ const config = {
   preprocess: [
     preprocess({ postcss: true }),
     mdsvex({
-      extensions: ['.md'],
+      extensions: ['.md']
     })
   ],
 
@@ -23,9 +23,7 @@ const config = {
   },
 
   vitePlugin: {
-    experimental: {
-      inspector: true
-    }
+    inspector: true
   }
 };
 
