@@ -33,8 +33,6 @@
   on:click={toggleOverlay}
   on:keypress={toggleOverlay}
 >
-  <!-- <CvOverlay {overlay} {company} {timeFrame} /> -->
-
   <div class="flex flex-col md:flex-row gap-4">
     <div class="min-w-[12rem] items-stretch">
       <HardFacts {url} {company} {timeFrame} {position} {location} />

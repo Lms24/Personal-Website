@@ -16,7 +16,7 @@
 <Section styleClass="min-h-[40vh] items-center justify-center">
   <img class="rounded-full w-52 h-52 object-fill" src="/ls.jpg" alt="Lukas Stracke" />
   <div class="flex flex-col items-center justify-center text-center ">
-    <p>Hi, I am </p>
+    <p>Hi, I am</p>
     <H1>Lukas Stracke</H1>
     <p class="mt-2 md:mt-6">
       Welcome to my website! I'm a software engineer from Austria, currently working at <TextLink
@@ -65,15 +65,11 @@
 
 <Separator />
 
-<!-- <Section styleClass="md:flex-col gap-4">
-  <h3>Click <TextLink href="/about">here</TextLink> for CV, my life story and stuff </h3>
-  <h3>Check out what I <TextLink href="/work">shipped</TextLink> and contributed to</h3>
-  <h3>If you have nothing better to do, read my <TextLink href="/blog">blog</TextLink></h3>
-</Section> -->
-
 <Section styleClass="md:flex-col">
   <h2>Check out some of my work:</h2>
-  <div class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between lg:justify-around w-full max-w-screen-xl">
+  <div
+    class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between lg:justify-around w-full max-w-screen-xl"
+  >
     <WorkItem title="Sentry SDKs" description="Sentry JS SDK Maintainer">
       <Sentry />
     </WorkItem>
