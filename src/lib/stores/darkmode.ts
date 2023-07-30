@@ -1,9 +1,5 @@
 import { writable } from 'svelte/store';
-import { browser } from '$app/environment';
 
-export const darkmode = writable(
-  browser &&
-    window !== undefined &&
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-);
+// For the moment, I'll keep it in dark only.
+// Future todo: Possibly make it depend on user's preferred setting.
+export const darkmode = writable(true);

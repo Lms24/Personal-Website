@@ -9,7 +9,7 @@ const config = {
   preprocess: [
     preprocess({ postcss: true }),
     mdsvex({
-      extensions: ['.md']
+      extensions: ['.md'],
     })
   ],
 

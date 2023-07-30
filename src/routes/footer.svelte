@@ -4,5 +4,5 @@
 
 <footer class="py-4 flex flex-row justify-between items-center text-xs ">
   <p class=" mt-[2px]">© Lukas Stracke, 2023</p>
-  <TextLink href="/imprint">Imprint</TextLink>
+  <TextLink neutralLink href="/imprint">Imprint</TextLink>
 </footer>
