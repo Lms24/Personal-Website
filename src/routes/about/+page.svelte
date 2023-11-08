@@ -23,6 +23,8 @@
   } from '$lib/misc/tags';
   import CvItem from './cv-item.svelte';
   import PubItem from './pub-item.svelte';
+
+  export let data;
 </script>
 
 <Section styleClass="flex flex-row">
@@ -31,6 +33,7 @@
   </div>
   <div class="flex flex-col items-center w-full md:text-center gap-4">
     <H1>About Me</H1>
+    <p>Age: {data.user.about.age}</p>
     <p class="mt-4">
       I'm a software engineer who loves to work with modern web technologies. I enjoy creating tools
       for developers and I've specialized in SDK development, observability and testing. I'm

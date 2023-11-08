@@ -19,6 +19,15 @@ const config = {
     adapter: adapter(),
     files: {
       lib: './src/lib'
+    },
+    csp: {
+      // mode: 'nonce',
+      directives: {
+        'script-src': ['self']
+      }
+      // reportOnly: {
+      //   'script-src': ['self']
+      // },
     }
   },
 
