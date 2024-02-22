@@ -70,7 +70,7 @@
   <div
     class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between lg:justify-around w-full max-w-screen-xl"
   >
-    <WorkItem title="Sentry SDKs" description="Sentry JS SDK Maintainer">
+    <WorkItem title="Sentry JS SDKs" description="Sentry JS SDK Maintainer">
       <Sentry />
     </WorkItem>
     <WorkItem title="Henri" description="Ambulance Shift Diary">
