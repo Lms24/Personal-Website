@@ -226,6 +226,31 @@
   <H2>Talks</H2>
 
   <PubItem
+    title="Shining a Spotlight on 3rd Party Widgets @ React Amsterdam 02/2024"
+    type="talk"
+    url="https://guild.host/events/react-amsterdam-february-ratkci"
+  >
+    <p>
+      Meetup Talk at React Amsterdam about the Shadow DOM API and how we used it to isolate <TextLink
+        href="https://spotlightjs.com">Spotlight's</TextLink
+      > Overlay from the host page.
+    </p>
+  </PubItem>
+
+  <PubItem
+    title="Building an Application Monitoring SDK for SvelteKit @ Svienna 01/2024"
+    url="https://www.youtube.com/watch?v=N8Hs-LVL_f8"
+    type="talk"
+  >
+    <p>
+      Meetup talk how I built Sentry's SvelteKit SDK. I shared insights into specific challenges as
+      well as a lot of details on the inner workings of SvelteKit. Check out my <TextLink
+        href="https://svienna-sveltekit-sdk-bts.vercel.app/">Slides.</TextLink
+      >
+    </p>
+  </PubItem>
+
+  <PubItem
     title="Know your Components @ VueConf 2022"
     url="https://www.vuemastery.com/conferences/vueconf-us-2022/know-your-components/"
     type="talk"

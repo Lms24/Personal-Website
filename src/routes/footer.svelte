@@ -3,6 +3,6 @@
 </script>
 
 <footer class="py-4 flex flex-row justify-between items-center text-xs ">
-  <p class=" mt-[2px]">© Lukas Stracke, 2023</p>
+  <p class=" mt-[2px]">© Lukas Stracke, 2024</p>
   <TextLink neutralLink href="/imprint">Imprint</TextLink>
 </footer>

@@ -1,4 +1,4 @@
-import { handleErrorWithSentry, Replay } from "@sentry/sveltekit";
+import { handleErrorWithSentry, Replay } from '@sentry/sveltekit';
 import * as Sentry from '@sentry/sveltekit';
 
 Sentry.init({
@@ -12,10 +12,12 @@ Sentry.init({
   // If the entire session is not sampled, use the below sample rate to sample
   // sessions when an error occurs.
   replaysOnErrorSampleRate: 1.0,
-  
+
   // If you don't want to use Session Replay, just remove the line below:
-  integrations: [new Replay()],
+  integrations: [new Replay(), Sentry.metrics.metricsAggregatorIntegration()]
 });
+
+Sentry.metrics.increment('page_views');
 
 // If you have a custom error handler, pass it to `handleErrorWithSentry`
 export const handleError = handleErrorWithSentry();
