@@ -14,7 +14,10 @@ Sentry.init({
   replaysOnErrorSampleRate: 1.0,
 
   // If you don't want to use Session Replay, just remove the line below:
-  integrations: [new Replay(), Sentry.metrics.metricsAggregatorIntegration()]
+  integrations: [
+    Sentry.replayIntegration({ maskAllText: false, blockAllMedia: false }),
+    Sentry.metrics.metricsAggregatorIntegration()
+  ]
 });
 
 Sentry.metrics.increment('page_views');
