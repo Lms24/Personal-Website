@@ -17,7 +17,8 @@ Sentry.init({
   integrations: [
     Sentry.replayIntegration({ maskAllText: false, blockAllMedia: false }),
     Sentry.metrics.metricsAggregatorIntegration()
-  ]
+  ],
+  environment: import.meta.env.DEV ? 'development' : 'production'
 });
 
 Sentry.metrics.increment('page_views');
