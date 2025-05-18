@@ -32,11 +32,12 @@
   <div class="flex flex-col items-center w-full md:text-center gap-4">
     <H1>About Me</H1>
     <p class="mt-4">
-      I'm a software engineer who loves to work with modern web technologies. I enjoy creating tools
-      for developers and I've specialized in SDK development, observability and testing. I'm
-      currently working at <TextLink href="https://sentry.io/welcome/">Sentry</TextLink> where I maintain
-      Sentry's 15 JavaScript SDKs together with my amazing team. Previously, I studied computer science
-      at Graz University of Technology while working as a web developer on JavaEE and Angular projects.
+      I'm a software engineer who loves working with modern web technologies. I enjoy creating tools
+      for developers and I've specialized in SDK and library development, observability and testing.
+      I'm currently working at <TextLink href="https://sentry.io/welcome/">Sentry</TextLink> where I
+      maintain Sentry's 15 JavaScript SDKs together with my amazing team. Previously, I studied computer
+      science at Graz University of Technology while working as a web developer on JavaEE and Angular
+      projects.
     </p>
     <p>
       Aside from Software, you'll find me making music, flight simming and enjoying life in the
@@ -205,13 +206,13 @@
   <H2>Blog Posts</H2>
 
   <PubItem
-  title="Mutation-testing our JavaScript SDKs"
-  url="https://sentry.engineering/blog/js-mutation-testing-our-sdks"
-  type="blog"
->
-  Published on Sentry's engineering blog about my experience of using mutation testing in the Sentry JS SDK codebase.
-</PubItem>
-
+    title="Mutation-testing our JavaScript SDKs"
+    url="https://sentry.engineering/blog/js-mutation-testing-our-sdks"
+    type="blog"
+  >
+    Published on Sentry's engineering blog about my experience of using mutation testing in the
+    Sentry JS SDK codebase.
+  </PubItem>
 
   <PubItem
     title="Sentry for SvelteKit"
@@ -235,44 +236,46 @@
   <H2>Talks</H2>
 
   <PubItem
-  title="Tracing the Slowdown: OpenTelemetry in SvelteKit made easy @ Svelte Summit 05/2025"
-  type="talk"
-  url="https://www.sveltesummit.com/schedule"
->
-  <p>
-    Talk at the Svelte Summit conference about the challenges of adding OpenTelemetry tracing to SvelteKit applications.
-    Also presented a solution to simplify observability in SvelteKit in front of the Svelte team.
-  </p>
+    title="Tracing the Slowdown: OpenTelemetry in SvelteKit made easy @ Svelte Summit 05/2025"
+    type="talk"
+    miscUrl="https://www.sveltesummit.com/schedule"
+    slidesUrl="https://github.com/Lms24/25-04-tracing-the-slowdown"
+  >
+    <p>
+      Talk at the Svelte Summit conference about the challenges of adding OpenTelemetry tracing to
+      SvelteKit applications. Also presented a solution to simplify observability in SvelteKit in
+      front of the Svelte team.
+    </p>
   </PubItem>
 
   <PubItem
-  title="Astro for Svelte Developers @ Svienna 12/2024"
-  type="talk"
-  url="https://austria.sveltesociety.dev/meetups/2024-12-Svienna-Svelte-Society-Vienna"
->
-  <p>
-    Meetup Talk at React Amsterdam about the Shadow DOM API and how we used it to isolate <TextLink
-      href="https://spotlightjs.com">Spotlight's</TextLink
-    > Overlay from the host page.
-  </p>
+    title="Astro for Svelte Developers @ Svienna 12/2024"
+    type="talk"
+    miscUrl="https://austria.sveltesociety.dev/meetups/2024-12-Svienna-Svelte-Society-Vienna"
+  >
+    <p>
+      A talk about when to use Astro or SvelteKit for your next project. Unfortunately, the
+      recording was lost.
+    </p>
   </PubItem>
 
   <PubItem
-  title="Mutation Testing: Testing your Tests @ ViennaJS 10/2024"
-  type="talk"
-  url="https://www.youtube.com/watch?v=Jx57AVzkZJU&ab_channel=ViennaJS"
->
-  <p>
-    Meetup Talk at ViennaJS about Mutation Testing and how to use it in JavaScript. 
-    Also shared my experience of using it in the Sentry JS SDK codebase.
-  </p>
+    title="Mutation Testing: Testing your Tests @ ViennaJS 10/2024"
+    type="talk"
+    miscUrl="https://sentry.engineering/blog/js-mutation-testing-our-sdks"
+    videoUrl="https://www.youtube.com/watch?v=Jx57AVzkZJU&ab_channel=ViennaJS"
+    slidesUrl="https://github.com/Lms24/24-10-viennajs-mutation-testing"
+  >
+    <p>
+      Meetup Talk at ViennaJS about Mutation Testing and how to use it in JavaScript. Also shared my
+      experience of using it in the Sentry JS SDK codebase.
+    </p>
   </PubItem>
-
 
   <PubItem
     title="Shining a Spotlight on 3rd Party Widgets @ React Amsterdam 02/2024"
     type="talk"
-    url="https://guild.host/events/react-amsterdam-february-ratkci"
+    miscUrl="https://guild.host/events/react-amsterdam-february-ratkci"
   >
     <p>
       Meetup Talk at React Amsterdam about the Shadow DOM API and how we used it to isolate <TextLink
@@ -283,20 +286,20 @@
 
   <PubItem
     title="Building an Application Monitoring SDK for SvelteKit @ Svienna 01/2024"
-    url="https://www.youtube.com/watch?v=N8Hs-LVL_f8"
+    videoUrl="https://www.youtube.com/watch?v=N8Hs-LVL_f8"
+    slidesUrl="https://github.com/Lms24/svienna-sveltekit-sdk-bts"
+    miscUrl="https://svienna-sveltekit-sdk-bts.vercel.app/"
     type="talk"
   >
     <p>
       Meetup talk how I built Sentry's SvelteKit SDK. I shared insights into specific challenges as
-      well as a lot of details on the inner workings of SvelteKit. Check out my <TextLink
-        href="https://svienna-sveltekit-sdk-bts.vercel.app/">Slides.</TextLink
-      >
+      well as a lot of details on the inner workings of SvelteKit.
     </p>
   </PubItem>
 
   <PubItem
     title="Know your Components @ VueConf 2022"
-    url="https://www.vuemastery.com/conferences/vueconf-us-2022/know-your-components/"
+    videoUrl="https://www.vuemastery.com/conferences/vueconf-us-2022/know-your-components/"
     type="talk"
   >
     Lightning Talk on how investigating the lifecycle of Vue components helps identify and resolve
