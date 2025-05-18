@@ -15,7 +15,7 @@
 
 <Section styleClass="min-h-[40vh] items-center justify-center">
   <img class="rounded-full w-52 h-52 object-fill" src="/ls.jpg" alt="Lukas Stracke" />
-  <div class="flex flex-col items-center justify-center text-center ">
+  <div class="flex flex-col items-center justify-center text-center">
     <p>Hi, I am</p>
     <H1>Lukas Stracke</H1>
     <p class="mt-2 md:mt-6">
@@ -54,7 +54,8 @@
       >
     </li>
     <li>
-      ...maintaining my side project <TextLink href="https://henri.live">Henri</TextLink>
+      ...maintaining my side projects <TextLink href="https://henri.live">Henri</TextLink> and
+      <TextLink href="https://github.com/Lms24/clifty">Clifty</TextLink>
     </li>
     <li>
       ...excited about <TextLink href="https://svelte.dev/">Svelte</TextLink>
@@ -71,13 +72,13 @@
     class="flex flex-col md:flex-row gap-4 md:gap-12 justify-between lg:justify-around w-full max-w-screen-xl"
   >
     <WorkItem title="Sentry JS SDKs" description="Sentry JS SDK Maintainer">
-      <Sentry />
+      <Sentry classes="w-3/4 h-3/4" />
     </WorkItem>
-    <WorkItem title="Henri" description="Ambulance Shift Diary">
+    <WorkItem title="Henri" description="Ambulance Shift Logbook">
       <img src="/henri.png" alt="Henri Logo" />
     </WorkItem>
-    <WorkItem title="JSR" description="Java Test Suite Reduction">
-      <img src="/jsr.png" alt="JSR Logo" />
+    <WorkItem title="Clifty" description="Programmatic CLI execution tool">
+      <img src="/clifty-logo.png" alt="Clifty Logo" class="rounded-lg w-3/4" />
     </WorkItem>
   </div>
 </Section>
