@@ -85,7 +85,25 @@
 <Separator></Separator>
 
 <Section styleClass="justify-center">
-  <PortfolioItem title="JSR" tags={[JAVA, JUNIT, HAMCREST, PIT, GRADLE]}>
+  <PortfolioItem title="Clifty" tags={[TYPESCRIPT]}>
+    <img slot="image" src="/clifty-logo.png" alt="Henri logo" class="flex h-52 w-52 rounded-lg" />
+
+    <div slot="description">
+      <p>
+        The nifty little CLI execution and testing library for JavaScript :{')'}
+      </p>
+      <p>
+        I created <TextLink href="https://github.com/lms24/clifty" bold>Clifty</TextLink> while researching how to best e2e-test a CLI application that requires user input.
+        The few options out there didn't impress me, so like any over-motivated software engineer, I decided to <TextLink href="https://www.npmjs.com/package/clifty" bold>publish my own</TextLink>.
+      </p>
+    </div>
+  </PortfolioItem>
+</Section>
+
+<Separator></Separator>
+
+<Section styleClass="justify-center">
+  <PortfolioItem title="JSR" tags={[JAVA, JUNIT, HAMCREST, PIT, GRADLE]} reverse>
     <img slot="image" src="/jsr.png" alt="Henri logo" class="flex h-52 w-52" />
 
     <div slot="description">
@@ -100,28 +118,6 @@
         suite reduction based on various coverage metrics and reduction algorithms. As part of my
         thesis, I released JSR as an open source project and multiple TU Graz students extened it
         with new features and algorithms as part of their theses.
-      </p>
-    </div>
-  </PortfolioItem>
-</Section>
-
-<Separator></Separator>
-
-<Section styleClass="justify-center">
-  <PortfolioItem reverse title="CiteWorks" tags={[ANGULAR, FIREBASE, MATERIAL, ECHARTS, PYTHON]}>
-    <img slot="image" src="/citeworks.png" alt="Henri logo" class="flex h-52 w-52 rounded-lg" />
-
-    <div slot="description">
-      <p>
-        I created <TextLink href="https://citeworks-bf003.web.app/home" bold>CiteWorks</TextLink> for
-        a university course about interactive data visualization of digital libraries. This app visualizes
-        citation and co-authorship networks amongst academic publications.
-      </p>
-      <p>
-        CiteWorks can be used to analyze publication habits of academic authors and to identify
-        patterns of collaboration between authors and research groups. The app is based on Angular
-        and uses eCharts to visualize the network. While working on this app, I used WebGL to
-        accelerate the creation of large graphs.
       </p>
     </div>
   </PortfolioItem>

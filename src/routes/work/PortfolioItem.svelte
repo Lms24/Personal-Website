@@ -10,7 +10,7 @@
 <article
   class="flex {reverse
     ? 'md:flex-row-reverse'
-    : 'md:flex-row'} flex-col w-full gap-4 items-center justify-around max-w-screen-xl"
+    : 'md:flex-row'} flex-col w-full gap-8 items-center justify-around max-w-screen-xl"
 >
   <slot name="image" />
   <div class="flex flex-col text-sm justify-around h-full">

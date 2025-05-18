@@ -20,7 +20,7 @@
     <H1>Lukas Stracke</H1>
     <p class="mt-2 md:mt-6">
       Welcome to my website! I'm a software engineer from Austria, currently working at <TextLink
-        href="https://sentry.io/welcome/">Sentry.io</TextLink
+        href="https://sentry.io/welcome/">Sentry</TextLink
       >. <br />Let's connect!
     </p>
     <div class="mt-4 md:mt-8 flex flex-row gap-4 md:gap-12 items-center">
