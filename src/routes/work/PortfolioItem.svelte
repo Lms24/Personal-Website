@@ -1,6 +1,6 @@
 <script lang="ts">
   import Badge from '$lib/components/badge.svelte';
-  import TagList from '../about/TagList.svelte';
+  import TagList from '$lib/components/TagList.svelte';
 
   export let title: string;
   export let reverse: boolean | undefined = false;
@@ -22,5 +22,5 @@
     </h2>
     <slot name="description" />
   </div>
-  <TagList mono={false} {tags}></TagList>
+  <TagList mono={false} {tags} />
 </article>

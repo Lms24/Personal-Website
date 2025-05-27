@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Languages from './TagList.svelte';
-
   import HardFacts from './HardFacts.svelte';
 
   export let company: string;
@@ -26,9 +24,9 @@
 </script>
 
 <article
-  class="flex flex-col w-full max-w-screen-xl 
+  class="flex flex-col w-full max-w-screen-xl
   bg-white p-8 rounded-lg shadow-sm gap-4
-  dark:bg-gray-700 dark:shadow-gray-900 
+  dark:bg-gray-700 dark:shadow-gray-900
    transition-all duration-200"
   on:click={toggleOverlay}
   on:keypress={toggleOverlay}
@@ -44,6 +42,6 @@
   </div>
 
   {#if languages}
-    <Languages tags={languages} />
+    <languages tags={languages} />
   {/if}
 </article>

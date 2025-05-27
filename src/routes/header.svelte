@@ -9,8 +9,8 @@
   class="h-[4.5rem] flex flex-row justify-center border-b-[1px] border-gray-300 dark:border-gray-600"
 >
   <Nav>
-    <NavItem home {activeRoute} name="Home" />
-    <NavItem {activeRoute} name="About" />
+    <NavItem home {activeRoute} name="About Me" />
+    <NavItem {activeRoute} name="Talks" />
     <NavItem {activeRoute} name="Work" />
   </Nav>
 </header>

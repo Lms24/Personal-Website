@@ -25,6 +25,7 @@
     SVELTE,
     TAILWIND,
     TYPESCRIPT,
+    VITEST,
     VUE
   } from '$lib/misc/tags';
   import Separator from '$lib/components/Separator.svelte';
@@ -55,13 +56,13 @@
   </PortfolioItem>
 </Section>
 
-<Separator></Separator>
+<Separator />
 
 <Section styleClass="justify-center">
   <PortfolioItem
-    reverse
     title="Henri"
     tags={[ANGULAR, TYPESCRIPT, PWA, FIREBASE, NODEJS, MATERIAL, TAILWIND]}
+    reverse
   >
     <img slot="image" src="/henri.png" alt="Henri logo" class="flex h-52 w-52 scale-x-[-1]" />
     <div slot="description">
@@ -82,10 +83,10 @@
   </PortfolioItem>
 </Section>
 
-<Separator></Separator>
+<Separator />
 
 <Section styleClass="justify-center">
-  <PortfolioItem title="Clifty" tags={[TYPESCRIPT]}>
+  <PortfolioItem title="Clifty" tags={[TYPESCRIPT, VITEST]}>
     <img slot="image" src="/clifty-logo.png" alt="Henri logo" class="flex h-52 w-52 rounded-lg" />
 
     <div slot="description">
@@ -93,14 +94,18 @@
         The nifty little CLI execution and testing library for JavaScript :{')'}
       </p>
       <p>
-        I created <TextLink href="https://github.com/lms24/clifty" bold>Clifty</TextLink> while researching how to best e2e-test a CLI application that requires user input.
-        The few options out there didn't impress me, so like any over-motivated software engineer, I decided to <TextLink href="https://www.npmjs.com/package/clifty" bold>publish my own</TextLink>.
+        I created <TextLink href="https://github.com/lms24/clifty" bold>Clifty</TextLink> while researching
+        how to best e2e-test a CLI application that requires user input. The few options out there didn't
+        impress me, so like any over-motivated software engineer, I decided to <TextLink
+          href="https://www.npmjs.com/package/clifty"
+          bold>publish my own</TextLink
+        >.
       </p>
     </div>
   </PortfolioItem>
 </Section>
 
-<Separator></Separator>
+<Separator />
 
 <Section styleClass="justify-center">
   <PortfolioItem title="JSR" tags={[JAVA, JUNIT, HAMCREST, PIT, GRADLE]} reverse>

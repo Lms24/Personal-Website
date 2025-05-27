@@ -43,17 +43,17 @@
       <div class="flex flex-row gap-4 -ml-2">
         {#if slidesUrl}
           <TextLink href={slidesUrl} styleClass="!inline-flex !flex-row !items-center "
-            ><IconWrapper styleClass="h-3"><FaSlideshare /></IconWrapper> Slides</TextLink
+            ><IconWrapper styleClass="h-[20px]"><FaSlideshare /></IconWrapper> Slides</TextLink
           >
         {/if}
         {#if videoUrl}
           <TextLink href={videoUrl} styleClass="!inline-flex !flex-row !items-center"
-            ><IconWrapper styleClass="h-3"><FaVideo /></IconWrapper> Video</TextLink
+            ><IconWrapper styleClass="h-[20px]"><FaVideo /></IconWrapper> Video</TextLink
           >
         {/if}
         {#if miscUrl}
           <TextLink href={miscUrl} styleClass="!inline-flex !flex-row !items-center"
-            ><IconWrapper styleClass="h-3"><FaGlobe /></IconWrapper> More</TextLink
+            ><IconWrapper styleClass="h-[20px]"><FaGlobe /></IconWrapper> More</TextLink
           >
         {/if}
       </div>

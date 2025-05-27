@@ -32,6 +32,7 @@ export const GRADLE: Tag = { name: 'Gradle', color: 'bg-green-200' };
 
 /* Testing Frameworks */
 export const JEST: Tag = { name: 'Jest', color: 'bg-yellow-300' };
+export const VITEST: Tag = { name: 'Vitest', color: 'bg-purple-400' };
 export const PLAYWRIGHT: Tag = { name: 'Playwright', color: 'bg-blue-300' };
 export const JUNIT: Tag = { name: 'JUnit', color: 'bg-orange-700' };
 export const HAMCREST: Tag = { name: 'Hamcrest', color: 'bg-orange-200' };
