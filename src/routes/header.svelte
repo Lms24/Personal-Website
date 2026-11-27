@@ -1,27 +1,31 @@
 <script lang="ts">
-  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+  import { resolve } from '$app/paths';
+  import ThemeToggle from '#lib/components/ThemeToggle.svelte';
 
-  export let activeRoute: string;
+  let { activeRoute }: { activeRoute: string } = $props();
 
   const items = [
-    { name: 'About', href: '/', route: '' },
-    { name: 'Work', href: '/work', route: 'work' },
-    { name: 'Talks', href: '/talks', route: 'talks' }
+    { name: 'About', href: resolve('/'), route: '' },
+    { name: 'Work', href: resolve('/work'), route: 'work' },
+    { name: 'Talks', href: resolve('/talks'), route: 'talks' }
   ];
 </script>
 
 <header>
-  <a class="id mono" href="/">lukas stracke</a>
+  <a class="id mono" href={resolve('/')}>lukas stracke</a>
   <div class="right">
     <nav aria-label="Main">
       <ul>
-        {#each items as item}
+        {#each items as item (item.route)}
           <li>
+            <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- resolved above -->
             <a
               href={item.href}
               class:on={activeRoute === item.route}
-              aria-current={activeRoute === item.route ? 'page' : undefined}>{item.name}</a
+              aria-current={activeRoute === item.route ? 'page' : undefined}
             >
+              {item.name}
+            </a>
           </li>
         {/each}
       </ul>

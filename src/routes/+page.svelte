@@ -1,7 +1,8 @@
 <script lang="ts">
-  import Row from '$lib/components/Row.svelte';
-  import Section from '$lib/components/Section.svelte';
-  import SocialLinks from '$lib/components/SocialLinks.svelte';
+  import { resolve } from '$app/paths';
+  import Row from '#lib/components/Row.svelte';
+  import Section from '#lib/components/Section.svelte';
+  import SocialLinks from '#lib/components/SocialLinks.svelte';
 </script>
 
 <div class="hero">
@@ -37,9 +38,9 @@
   >
     <ul>
       <li>
-        Working on <a class="link" href="https://github.com/getsentry/sentry-javascript"
-          >Sentry's JavaScript SDKs</a
-        >, supporting more than 15 frontend and backend frameworks.
+        Working on <a class="link" href="https://github.com/getsentry/sentry-javascript">
+          Sentry's JavaScript SDKs
+        </a>, supporting more than 15 frontend and backend frameworks.
       </li>
       <li>Own the Angular and Svelte SDKs.</li>
       <li>Drive projects such as the bundler plugins and the SDK setup wizards.</li>
@@ -76,9 +77,9 @@
 <Section label="Education">
   <Row title="MSc Computer Science" meta="TU Graz" aside="2020 – 2022">
     <p>
-      Software technology major, multimedia systems minor. Thesis on <em
-        >Test Suite Reduction with Checked Coverage</em
-      >, passed with distinction.
+      Software technology major, multimedia systems minor. Thesis on <em>
+        Test Suite Reduction with Checked Coverage
+      </em>, passed with distinction.
     </p>
   </Row>
   <Row title="BSc Computer Science" meta="TU Graz" aside="2016 – 2020">
@@ -91,16 +92,21 @@
     title="Tracing the Slowdown: OpenTelemetry in SvelteKit"
     meta="Svelte Summit"
     aside="2025-05"
-    href="/talks#tracing-the-slowdown"
+    href={resolve('/talks#tracing-the-slowdown')}
   />
-  <Row title="Astro for Svelte Developers" meta="Svienna" aside="2024-12" href="/talks#astro-for-svelte-developers" />
+  <Row
+    title="Astro for Svelte Developers"
+    meta="Svienna"
+    aside="2024-12"
+    href={resolve('/talks#astro-for-svelte-developers')}
+  />
   <Row
     title="Mutation Testing: Testing your Tests"
     meta="ViennaJS"
     aside="2024-10"
-    href="/talks#mutation-testing"
+    href={resolve('/talks#mutation-testing')}
   />
-  <p class="more mono"><a href="/talks">All talks →</a></p>
+  <p class="more mono"><a href={resolve('/talks')}>All talks →</a></p>
 </Section>
 
 <Section label="Writing">
@@ -141,9 +147,9 @@
     href="https://dl.acm.org/doi/abs/10.1145/3524481.3527216"
   />
   <p class="more mono">
-    <a href="https://blog.sentry.io/authors/lukas-stracke/" target="_blank" rel="noopener"
-      >All posts on the Sentry Blog ↗</a
-    >
+    <a href="https://blog.sentry.io/authors/lukas-stracke/" target="_blank" rel="noopener">
+      All posts on the Sentry Blog ↗
+    </a>
   </p>
 </Section>
 

@@ -1,27 +1,24 @@
-import { handleErrorWithSentry } from '@sentry/sveltekit';
 import * as Sentry from '@sentry/sveltekit';
 
 Sentry.init({
   dsn: 'https://91194bb5140498fecb356ed27719126d@o4504389074223104.ingest.sentry.io/4505618372427776',
   tracesSampleRate: 1.0,
+  environment: import.meta.env.DEV ? 'development' : 'production',
 
-  // This sets the sample rate to be 10%. You may want this to be 100% while
-  // in development and sample at a lower rate in production
+  // Record 10% of sessions, and every session in which an error happens.
   replaysSessionSampleRate: 0.1,
-
-  // If the entire session is not sampled, use the below sample rate to sample
-  // sessions when an error occurs.
   replaysOnErrorSampleRate: 1.0,
+  integrations: [Sentry.replayIntegration({ maskAllText: false, blockAllMedia: false })],
 
-  // If you don't want to use Session Replay, just remove the line below:
-  integrations: [
-    Sentry.replayIntegration({ maskAllText: false, blockAllMedia: false }),
-    Sentry.metrics.metricsAggregatorIntegration()
-  ],
-  environment: import.meta.env.DEV ? 'development' : 'production'
+  // Since v11 the SDK collects user info, cookies and HTTP bodies unless told
+  // otherwise. Keep the previous behavior of not sending them.
+  dataCollection: {
+    userInfo: false,
+    cookies: false,
+    httpBodies: []
+  }
 });
 
-Sentry.metrics.increment('page_views');
+Sentry.metrics.count('page_views', 1);
 
-// If you have a custom error handler, pass it to `handleErrorWithSentry`
-export const handleError = handleErrorWithSentry();
+export const handleError = Sentry.handleErrorWithSentry();

@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let data: { title: string; date: string; content: ConstructorOfATypedSvelteComponent };
+  import type { Component } from 'svelte';
+
+  let { data }: { data: { title: string; date: string; content: Component } } = $props();
 </script>
 
 <svelte:head>
@@ -12,7 +14,7 @@
     <h1>{data.title}</h1>
   </header>
   <div class="prose max-w-none">
-    <svelte:component this={data.content} />
+    <data.content />
   </div>
 </article>
 

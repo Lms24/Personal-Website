@@ -1,29 +1,43 @@
 <script lang="ts">
-  export let title: string;
-  /** Makes the title a link */
-  export let href: string | undefined = undefined;
-  /** Secondary line under the title, e.g. venue or company */
-  export let meta: string | undefined = undefined;
-  /** Right-aligned mono text, e.g. a date */
-  export let aside: string | undefined = undefined;
+  import type { Snippet } from 'svelte';
 
-  $: external = href?.startsWith('http');
+  interface Props {
+    title: string;
+    /** Makes the title a link */
+    href?: string;
+    /** Secondary line under the title, e.g. venue or company */
+    meta?: string;
+    /** Right-aligned mono text, e.g. a date */
+    aside?: string;
+    /** Optional description below the title */
+    children?: Snippet;
+  }
+
+  let { title, href, meta, aside, children }: Props = $props();
+
+  let external = $derived(href?.startsWith('http'));
 </script>
 
 <article class="row">
   <div class="main">
     <h3>
       {#if href}
-        <a {href} target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined}
-          >{title}</a
+        <!-- Internal hrefs are passed in already resolve()d by the caller -->
+        <!-- eslint-disable svelte/no-navigation-without-resolve -->
+        <a
+          {href}
+          target={external ? '_blank' : undefined}
+          rel={external ? 'external noopener' : undefined}
         >
+          {title}
+        </a>
+        <!-- eslint-enable svelte/no-navigation-without-resolve -->
       {:else}
         {title}
       {/if}
     </h3>
     {#if meta}<p class="meta">{meta}</p>{/if}
-    {#if $$slots.default}<div class="desc"><slot /></div>{/if}
-    {#if $$slots.links}<div class="links"><slot name="links" /></div>{/if}
+    {#if children}<div class="desc">{@render children()}</div>{/if}
   </div>
   {#if aside}<span class="aside">{aside}</span>{/if}
 </article>
@@ -79,21 +93,6 @@
   }
   .desc :global(p) {
     margin: 0;
-  }
-  .links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 18px;
-    margin-top: 8px;
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-  }
-  .links :global(a) {
-    color: var(--muted);
-    transition: color 150ms ease;
-  }
-  .links :global(a:hover) {
-    color: var(--accent);
   }
   .aside {
     font-family: var(--font-mono);
