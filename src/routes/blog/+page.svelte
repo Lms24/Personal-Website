@@ -1,21 +1,33 @@
 <script lang="ts">
-  import Section from '$lib/components/section.svelte';
-  import PubItem from '../../lib/components/pub-item.svelte';
+  import Row from '$lib/components/Row.svelte';
+  import Section from '$lib/components/Section.svelte';
   import type { PageData } from './$types';
 
   export let data: PageData;
+
+  const fmt = (d: Date) => d.toISOString().slice(0, 10);
 </script>
 
-<Section>
-  <div class="flex flex-row items-stretch w-full text-center justify-center py-8">
-    Sometimes, I like to rant about things...
-  </div>
+<svelte:head>
+  <title>Blog · Lukas Stracke</title>
+</svelte:head>
+
+<div class="page-intro">
+  <h1 class="page-title">Blog</h1>
+  <p class="page-lede">Sometimes, I like to rant about things.</p>
+</div>
+
+<Section label="Posts">
+  {#each data.blogposts as post}
+    <Row title={post.meta.title} href={`/blog/${post.slug}`} aside={fmt(post.meta.date)} />
+  {:else}
+    <p class="empty">No posts yet.</p>
+  {/each}
 </Section>
 
-<div class="p-4 flex flex-col gap-8">
-  {#each data.blogposts as post}
-    <PubItem type="blog" title={post.meta.title} url={`/blog/${post.slug}`}>
-      <small>Published: {post.meta.date?.toLocaleDateString()}</small>
-    </PubItem>
-  {/each}
-</div>
+<style>
+  .empty {
+    margin: 0;
+    color: var(--muted);
+  }
+</style>

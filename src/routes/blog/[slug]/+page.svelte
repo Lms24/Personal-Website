@@ -2,12 +2,37 @@
   export let data: { title: string; date: string; content: ConstructorOfATypedSvelteComponent };
 </script>
 
-<div class="flex flex-row justify-center w-full">
-  <article class="prose prose-md max-w-5xl p-4 w-full dark:prose-invert prose-code:font-mono">
-    <div class="text-center">
-      <h1>{data.title}</h1>
-    </div>
-    <p class="text-sm text-center mt-0">Published: {new Date(data.date).toLocaleDateString()}</p>
+<svelte:head>
+  <title>{data.title} · Lukas Stracke</title>
+</svelte:head>
+
+<article>
+  <header>
+    <p class="label">{new Date(data.date).toISOString().slice(0, 10)}</p>
+    <h1>{data.title}</h1>
+  </header>
+  <div class="prose max-w-none">
     <svelte:component this={data.content} />
-  </article>
-</div>
+  </div>
+</article>
+
+<style>
+  article {
+    max-width: 68ch;
+    padding-block: 64px 32px;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  .label {
+    margin: 0 0 10px;
+  }
+  h1 {
+    margin: 0;
+    font-size: 36px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+</style>

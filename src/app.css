@@ -2,14 +2,190 @@
 @tailwind components;
 @tailwind utilities;
 
-.prose :where(code):not(:where([class~='not-prose'] *))::before {
-  content: '';
+/*
+ * Design tokens.
+ * Layout concept: a quiet "spec sheet" – a narrow label rail on the left,
+ * content on the right, separated by hairlines. Mono type carries metadata.
+ */
+:root {
+  --bg: #fbfbfa;
+  --fg: #16181c;
+  --muted: #636874;
+  --line: #e3e4e6;
+  --accent: #1f4fd1;
+  --chip: #eef1f8;
+
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --rail: 200px;
+  --gap: 48px;
+  --max: 980px;
+  --gutter: 32px;
+
+  color-scheme: light;
 }
+
+/*
+ * Dark theme. Applies when the OS prefers dark and the visitor hasn't picked
+ * light, or when they explicitly picked dark (data-theme is set by the inline
+ * script in app.html).
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #111317;
+    --fg: #e7e8ea;
+    --muted: #8d929d;
+    --line: #262931;
+    --accent: #7d9bff;
+    --chip: #1a1e28;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #111317;
+  --fg: #e7e8ea;
+  --muted: #8d929d;
+  --line: #262931;
+  --accent: #7d9bff;
+  --chip: #1a1e28;
+  color-scheme: dark;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 20px;
+    --gap: 16px;
+  }
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Inline links inside running text */
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  transition: text-decoration-color 150ms ease;
+}
+.link:hover {
+  text-decoration-color: var(--accent);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Small uppercase mono label, used for metadata keys and section rails */
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* Page intro shared by all top-level pages */
+.page-intro {
+  padding-block: 64px 48px;
+}
+.page-title {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.page-lede {
+  margin: 14px 0 0;
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+@media (max-width: 760px) {
+  .page-intro {
+    padding-block: 40px 32px;
+  }
+  .page-title {
+    font-size: 32px;
+  }
+}
+
+/* Blog prose: map Tailwind typography onto the tokens */
+.prose {
+  --tw-prose-body: var(--fg);
+  --tw-prose-headings: var(--fg);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--fg);
+  --tw-prose-code: var(--fg);
+  --tw-prose-quotes: var(--muted);
+  --tw-prose-hr: var(--line);
+  --tw-prose-bullets: var(--muted);
+  --tw-prose-counters: var(--muted);
+}
+.prose :where(code):not(:where([class~='not-prose'] *)) {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  background: var(--chip);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+.prose :where(code):not(:where([class~='not-prose'] *))::before,
 .prose :where(code):not(:where([class~='not-prose'] *))::after {
   content: '';
 }
+.prose :where(pre):not(:where([class~='not-prose'] *)) code {
+  background: none;
+  padding: 0;
+}
 
-.prose :where(code):not(:where([class~="not-prose"] *)) {
-    @apply text-orange-200;
-    @apply font-normal;
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }

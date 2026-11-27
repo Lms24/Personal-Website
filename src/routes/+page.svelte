@@ -1,278 +1,235 @@
-<script>
-  import Separator from '$lib/components/Separator.svelte';
-  import Badge from '$lib/components/badge.svelte';
-  import H1 from '$lib/components/h1.svelte';
-  import H2 from '$lib/components/h2.svelte';
-  import Section from '$lib/components/section.svelte';
-  import TextLink from '$lib/components/text-link.svelte';
-  import {
-    ANGULAR,
-    DOTNET,
-    JAVA,
-    JAVASCRIPT,
-    JSF,
-    KOTLIN,
-    MSSQL,
-    NODEJS,
-    PYTHON,
-    REACT,
-    RUST,
-    SVELTE,
-    TYPESCRIPT,
-    VUE
-  } from '$lib/misc/tags';
-  import CvItem from '$lib/components/cv-item.svelte';
-  import PubItem from '$lib/components/pub-item.svelte';
-  import IconWrapper from '$lib/components/iconWrapper.svelte';
-  import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
-  import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
-  import BlueSkyIcon from '$lib/icons/BlueSkyIcon.svelte';
+<script lang="ts">
+  import Row from '$lib/components/Row.svelte';
+  import Section from '$lib/components/Section.svelte';
+  import SocialLinks from '$lib/components/SocialLinks.svelte';
 </script>
 
-<Section styleClass="flex flex-row">
-  <div>
-    <img class="rounded-full p-8" src="/ls.jpg" alt="Lukas Stracke" />
+<div class="hero">
+  <img class="photo" src="/ls.jpg" alt="Portrait of Lukas Stracke" width="200" height="200" />
+  <div class="intro">
+    <h1>Lukas Stracke</h1>
+    <p class="bio">
+      Software engineer at <a class="link" href="https://sentry.io/welcome/">Sentry</a>, where I
+      maintain Sentry's JavaScript SDKs with my team. I build tools for developers and spend most of
+      my time on SDK and library development, observability, and testing.
+    </p>
+    <dl>
+      <dt class="label">Currently</dt>
+      <dd>SDKs at Sentry</dd>
+      <dt class="label">Focus</dt>
+      <dd>SDKs &amp; libraries · Observability · Testing</dd>
+      <dt class="label">Based in</dt>
+      <dd>Vienna, Austria</dd>
+      <dt class="label">Background</dt>
+      <dd>MSc Computer Science, TU Graz</dd>
+      <dt class="label">Elsewhere</dt>
+      <dd><SocialLinks /></dd>
+    </dl>
   </div>
-  <div class="flex flex-col items-center w-full md:text-center gap-4">
-    <H1>Hi, I'm Lukas!</H1>
-    <p class="mt-4">
-      I'm a software engineer who loves working with modern web technologies. I enjoy creating tools
-      for developers and I've specialized in SDK and library development, observability and testing.
-      I'm currently working at <TextLink href="https://sentry.io/welcome/">Sentry</TextLink> where I
-      maintain Sentry's 15 JavaScript SDKs together with my amazing team. Previously, I studied computer
-      science at Graz University of Technology while working as a web developer on JavaEE and Angular
-      projects.
-    </p>
+</div>
+
+<Section label="Experience">
+  <Row
+    title="Software Engineer"
+    meta="Sentry · Vienna"
+    aside="2022 – now"
+    href="https://sentry.io/welcome/"
+  >
+    <ul>
+      <li>
+        Working on <a class="link" href="https://github.com/getsentry/sentry-javascript"
+          >Sentry's JavaScript SDKs</a
+        >, supporting more than 15 frontend and backend frameworks.
+      </li>
+      <li>Own the Angular and Svelte SDKs.</li>
+      <li>Drive projects such as the bundler plugins and the SDK setup wizards.</li>
+      <li>Work with the open source community on GitHub, triaging issues and requests.</li>
+    </ul>
+  </Row>
+  <Row
+    title="Frontend Developer"
+    meta="Prime Software · Graz"
+    aside="2020 – 2021"
+    href="https://www.prime-software.at/"
+  >
+    <ul>
+      <li>Built and maintained Angular SPAs with a focus on usability and PWA standards.</li>
+      <li>Architected a new SPA around extensibility, code splitting and performance.</li>
+      <li>Introduced best practices in Angular development, SEO and deployment.</li>
+    </ul>
+  </Row>
+  <Row title="Fullstack Developer" meta="Management Partners · Graz" aside="2016 – 2020">
+    <ul>
+      <li>Maintained and extended a Java EE application, focusing on usability and performance.</li>
+      <li>Improved security, CI/CD, maintenance and code quality in the development process.</li>
+      <li>Mentored developers in JavaServer Faces and MS SQL Server.</li>
+    </ul>
+  </Row>
+  <Row title="Research Assistant" meta="TU Graz" aside="2019" href="https://www.tugraz.at">
     <p>
-      Aside from Software, you'll find me making music, flight simming and enjoying life in the
-      beautiful city of Vienna. By the way, I'm a dog person!
+      Built a prototype for code similarity detection using subgraph isomorphism testing of program
+      dependence graphs. This became my Bachelor's thesis.
     </p>
-    <p>
-      Sometimes, <TextLink href="/talks">I give talks</TextLink> about svelte, observability or testing.
-    </p>
-    <p>Let's connect!</p>
-    <div class=" flex flex-row gap-4 md:gap-12 items-center">
-      <TextLink neutralLink href="https://bsky.app/profile/stracke.tech">
-        <IconWrapper>
-          <BlueSkyIcon />
-        </IconWrapper>
-      </TextLink>
-      <TextLink neutralLink href="https://github.com/Lms24">
-        <IconWrapper>
-          <FaGithub />
-        </IconWrapper>
-      </TextLink>
-      <TextLink neutralLink href="https://www.linkedin.com/in/lukas-stracke/">
-        <IconWrapper>
-          <FaLinkedin />
-        </IconWrapper>
-      </TextLink>
-    </div>
-  </div>
+  </Row>
 </Section>
 
-<Separator />
+<Section label="Education">
+  <Row title="MSc Computer Science" meta="TU Graz" aside="2020 – 2022">
+    <p>
+      Software technology major, multimedia systems minor. Thesis on <em
+        >Test Suite Reduction with Checked Coverage</em
+      >, passed with distinction.
+    </p>
+  </Row>
+  <Row title="BSc Computer Science" meta="TU Graz" aside="2016 – 2020">
+    <p>Thesis on <em>Code Similarity Detection using Program Dependence Graphs</em>.</p>
+  </Row>
+</Section>
 
-<Section styleClass="w-full md:flex-col justify-center items-center">
-  <H2>Work Experience</H2>
+<Section label="Recent talks">
+  <Row
+    title="Tracing the Slowdown: OpenTelemetry in SvelteKit"
+    meta="Svelte Summit"
+    aside="2025-05"
+    href="/talks#tracing-the-slowdown"
+  />
+  <Row title="Astro for Svelte Developers" meta="Svienna" aside="2024-12" href="/talks#astro-for-svelte-developers" />
+  <Row
+    title="Mutation Testing: Testing your Tests"
+    meta="ViennaJS"
+    aside="2024-10"
+    href="/talks#mutation-testing"
+  />
+  <p class="more mono"><a href="/talks">All talks →</a></p>
+</Section>
 
-  <CvItem
-    company="Sentry"
-    position="Software Engineer"
-    timeFrame="Since Feb 2022"
-    location="Vienna, AT"
-    url="https://sentry.io/welcome/"
-    languages={[JAVASCRIPT, TYPESCRIPT, ANGULAR, SVELTE, VUE, NODEJS, REACT, RUST, PYTHON]}
-  >
-    <ul class="list-disc">
-      <li>
-        Working on <TextLink href="https://github.com/getsentry/sentry-javascript"
-          >Sentry's JS SDKs</TextLink
-        > - We support more than 15 frontend and backend JS frameworks.
-      </li>
-      <li class="mt-1">
-        Actively engaging with the open source community on GitHub, triaging incoming issues and
-        requests.
-      </li>
-      <li class="mt-1">
-        I own Sentry's Angular and Svelte SDKs, specializing in the respective frameworks.
-      </li>
-      <li class="mt-1">
-        I drive and contribute to multiple projects, such as our bundler plugins and SDK setup
-        wizards.
-      </li>
-    </ul>
-  </CvItem>
-
-  <CvItem
-    company="Prime Software"
-    position="Frontend Developer"
-    timeFrame="Jul 2020 - Dec 2021"
-    url="https://www.prime-software.at/"
-    location="Graz, AT"
-    languages={[ANGULAR, JAVA, DOTNET]}
-  >
-    <ul class="list-disc">
-      <li>
-        Created and maintained multiple Angular SPAs with heavy emphasis on usability and PWA
-        standards.
-      </li>
-      <li class="mt-1">
-        Planned and architected a new SPA with focus on extensibility, code splitting and
-        performance.
-      </li>
-      <li class="mt-1">
-        Introduced various best practises in Angular development, SEO and and deployment.
-      </li>
-    </ul>
-  </CvItem>
-
-  <CvItem
-    company="Management Partners"
-    position="Fullstack Developer"
-    timeFrame="Oct 2016 - Feb 2020"
-    location="Graz, AT"
-    languages={[JAVA, JSF, MSSQL]}
-  >
-    <ul class="list-disc">
-      <li>
-        Maintained and extended a JavaEE application with a focus on usability and performance.
-      </li>
-      <li class="mt-1">
-        Improvements of Development Process, especially regarding Security, DevOps & CI/CD, Software
-        Maintenance and Code Quality
-      </li>
-      <li class="mt-1">Mentored and trained developers in JavaServerFaces and MS SQL Server.</li>
-    </ul>
-  </CvItem>
-
-  <CvItem
-    company="TU Graz"
-    position="Research Assistant"
-    timeFrame="Mar 2019 - Jul 2019"
-    url="https://www.tugraz.at"
-    location="Graz, AT"
-    languages={[KOTLIN]}
-  >
-    <ul class="list-disc">
-      <li>Research and Development in the field of Software Maintenance</li>
-      <li class="mt-1">
-        Implementation of a Prototype for Code Similarity Detection using Subgraph-Isomorphism
-        Testing of Program Dependence Graphs
-      </li>
-      <li class="mt-1">
-        During the Project, I wrote my Bachelor's Thesis (passed with distinction)
-      </li>
-    </ul>
-  </CvItem>
-
-  <H2>Education</H2>
-
-  <CvItem
-    company="TU Graz"
-    position="Computer Science (Msc)"
-    timeFrame="Mar 2020 - Jan 2022"
-    url="https://www.tugraz.at"
-    location="Graz, AT"
-  >
-    <ul class="list-disc">
-      <li>
-        Master's degree with focus on software rechnology (major) and multimedia systems (minor)
-      </li>
-      <li class="mt-1">
-        Courses around: Compiler Construction, SW Architecture, Code Analysis, Testing
-      </li>
-      <li class="mt-1">
-        Master's thesis: <span class="italic">Test Suite Reduction with Checked Coverage</span>
-      </li>
-      <li class="mt-1">
-        Passed with distinction (1.0), published a conference paper based on my thesis.
-      </li>
-    </ul>
-  </CvItem>
-
-  <CvItem
-    company="TU Graz"
-    position="Computer Science (Bsc)"
-    timeFrame="Oct 2016 - Feb 2020"
-    url="https://www.tugraz.at"
-    location="Graz, AT"
-  >
-    <ul class="list-disc">
-      <li>Bachelor's degree with focus on broad and intensive education in computer science.</li>
-      <li class="mt-1">
-        Courses around: Algorithms, Software Engineering, Web, IT Security, AI & Data Science,
-        Computer Graphics, Operating System Development
-      </li>
-      <li class="mt-1">
-        Bachelor's thesis
-        <span class="italic"> Code Similarity Detection using Program Dependence Graphs</span>
-      </li>
-    </ul>
-  </CvItem>
-
-  <CvItem company="BG G.I.B.S. Graz" position="Secondary/High School" url="https://www.gibs.at/">
-    <ul class="list-disc">
-      <li>International school with classes taught in English</li>
-    </ul>
-  </CvItem>
-
-  <H2>Academic Publications</H2>
-
-  <PubItem
-    title="Checked Coverage for Test Suite Reduction - Is It Worth the Effort?"
-    url="https://dl.acm.org/doi/abs/10.1145/3524481.3527216"
-    type="paper"
-  >
-    Submitted and accepted at AST 22 conference. Awarded with the “Best Paper Award”. This paper is
-    based on my Master's thesis. Co-authors: Roxane Koitz-Hristov, Lukas Stracke, Franz Wotawa.
-  </PubItem>
-
-  <H2>Blog Posts</H2>
-
-  <PubItem
+<Section label="Writing">
+  <Row
+    title="Naming is hard, semantics are hard(er): Inside Sentry Conventions"
+    aside="2026-11"
+    href="https://blog.sentry.io/sentry-conventions/"
+  />
+  <Row
+    title="Improving browser tracing step by step"
+    aside="2025-10"
+    href="https://blog.sentry.io/improving-browser-tracing-step-by-step/"
+  />
+  <Row
+    title="SvelteKit observability just got 10x better"
+    aside="2025-09"
+    href="https://blog.sentry.io/sveltekit-observability-just-got-10x-better/"
+  />
+  <Row
     title="Mutation-testing our JavaScript SDKs"
-    url="https://sentry.engineering/blog/js-mutation-testing-our-sdks"
-    type="blog"
-  >
-    Published on Sentry's engineering blog about my experience of using mutation testing in the
-    Sentry JS SDK codebase.
-  </PubItem>
-
-  <PubItem
+    aside="2024-08"
+    href="https://blog.sentry.io/mutation-testing-js-sdks/"
+  />
+  <Row
     title="Sentry for SvelteKit"
-    url="https://blog.sentry.io/sentry-for-sveltekit/"
-    type="blog"
-  >
-    I drove the development of Sentry's new SvelteKit SDK. This blog post announces its general
-    availability and shares some details around the inner workings of the SDK.
-  </PubItem>
-
-  <PubItem
-    title="Compiling Angular Libraries in a Multi-Framework SDK Monorepo"
-    url="https://blog.sentry.io/2022/07/26/compiling-angular-libraries-multi-framework-sdk-monorepo/"
-    type="blog"
-  >
-    Published on sentry.io. Blog post about overcoming the many challenges of properly compiling
-    Angular libraries in a framework-agnostik monorepo containing 15 JavaScript frontend and backend
-    SDK libraries.
-  </PubItem>
-
-  <H2>Hobbies</H2>
-
-  <div
-    class="w-full bg-white rounded-lg shadow-sm p-4 py-6 max-w-screen-xl justify-center items-center flex gap-4 flex-wrap text-xs
-    dark:bg-gray-700 dark:shadow-gray-900"
-  >
-    <Badge>Music</Badge>
-    <Badge color="bg-green-400">Guitars</Badge>
-    <Badge color="bg-red-400 ">Ambulance Service</Badge>
-    <Badge color="bg-gray-400">Aviation</Badge>
-    <Badge color="bg-cyan-400">Flightsim</Badge>
-    <Badge color="bg-blue-400">Sailing</Badge>
-    <Badge color="bg-yellow-400">Cooking</Badge>
-    <Badge color="bg-[sandybrown]">Woodworking</Badge>
-    <Badge color="bg-sky-400">Data</Badge>
-    <Badge color="bg-green-400">Politics</Badge>
-  </div>
+    aside="2023-05"
+    href="https://blog.sentry.io/sentry-for-sveltekit/"
+  />
+  <Row
+    title="Compiling Angular Libraries Properly in a Multi-Framework SDK Monorepo"
+    aside="2022-07"
+    href="https://blog.sentry.io/compiling-angular-libraries-multi-framework-sdk-monorepo/"
+  />
+  <Row
+    title="Checked Coverage for Test Suite Reduction – Is It Worth the Effort?"
+    meta="Paper · AST '22 · Best Paper Award"
+    aside="2022"
+    href="https://dl.acm.org/doi/abs/10.1145/3524481.3527216"
+  />
+  <p class="more mono">
+    <a href="https://blog.sentry.io/authors/lukas-stracke/" target="_blank" rel="noopener"
+      >All posts on the Sentry Blog ↗</a
+    >
+  </p>
 </Section>
+
+<Section label="Outside work">
+  <p class="plain">
+    Music and guitars, aviation and flight simming, sailing, cooking, woodworking, ambulance
+    service, data and politics. And yes, I'm a dog person.
+  </p>
+</Section>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: var(--gap);
+    padding-block: 64px 48px;
+  }
+  .photo {
+    width: 100%;
+    max-width: var(--rail);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: grayscale(0.15);
+  }
+  .intro {
+    min-width: 0;
+  }
+  h1 {
+    margin: 0 0 18px;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .bio {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 60ch;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 8px 16px;
+    margin: 28px 0 0;
+    font-size: 15px;
+  }
+  dt {
+    font-size: 11.5px;
+  }
+  dd {
+    margin: 0;
+  }
+  .more {
+    margin: 12px 0 0;
+    font-size: 12.5px;
+  }
+  .more a {
+    color: var(--accent);
+  }
+  .plain {
+    margin: 0;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+  @media (max-width: 760px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding-block: 40px 32px;
+    }
+    .photo {
+      width: 96px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    dl {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    dd {
+      margin-bottom: 12px;
+    }
+  }
+</style>
