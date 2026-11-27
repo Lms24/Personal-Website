@@ -1,12 +1,8 @@
-<script>
-  import PortfolioItem from './PortfolioItem.svelte';
-
-  import Section from '$lib/components/section.svelte';
-  import Sentry from '$lib/components/sentry.svelte';
-  import TextLink from '$lib/components/text-link.svelte';
+<script lang="ts">
+  import Section from '$lib/components/Section.svelte';
+  import SentryLogo from '$lib/components/sentry.svelte';
   import {
     ANGULAR,
-    ECHARTS,
     FIREBASE,
     GRADLE,
     HAMCREST,
@@ -21,109 +17,223 @@
     PIT,
     PLAYWRIGHT,
     PWA,
-    PYTHON,
     SVELTE,
     TAILWIND,
     TYPESCRIPT,
     VITEST,
     VUE
   } from '$lib/misc/tags';
-  import Separator from '$lib/components/Separator.svelte';
+  import type { Tag } from '$lib/misc/tags';
+
+  const names = (tags: Tag[]) => tags.map((t) => t.name);
+
+  const stacks = {
+    sentry: names([TYPESCRIPT, JAVASCRIPT, NODEJS, ANGULAR, SVELTE, VUE, JEST, PLAYWRIGHT, NX, LERNA]),
+    henri: names([ANGULAR, TYPESCRIPT, PWA, FIREBASE, NODEJS, MATERIAL, TAILWIND]),
+    clifty: names([TYPESCRIPT, VITEST]),
+    jsr: names([JAVA, JUNIT, HAMCREST, PIT, GRADLE])
+  };
 </script>
 
-<Section styleClass="justify-center">
-  <PortfolioItem
-    title="Sentry JS SDKs"
-    tags={[TYPESCRIPT, JAVASCRIPT, ANGULAR, SVELTE, NODEJS, VUE, JEST, PLAYWRIGHT, NX, LERNA]}
-  >
-    <Sentry slot="image" classes="flex h-48 w-48" />
-    <div slot="description">
-      <p>
-        Sentry is an error and performance monitoring service that puts developers first. <TextLink
-          href="https://sentry.io/welcome"
-          bold>Sentry</TextLink
-        > tries to gather everything developers need to know about why their application crashed or is
-        slow.
-      </p>
-      <p>
-        Sentry's SDKs are the gateway to this service. Everyone who wants to use Sentry needs to add
-        an SDK to their application. I maintain <TextLink
-          bold
-          href="https://github.com/getsentry/sentry-javascript">Sentry's JavaScript SDKs</TextLink
-        > which are 15 SDKs supporting all popular frontend and backend frameworks based on JavaScript.
-      </p>
+<svelte:head>
+  <title>Work · Lukas Stracke</title>
+</svelte:head>
+
+<div class="page-intro">
+  <h1 class="page-title">Work</h1>
+  <p class="page-lede">Things I've built or maintain, at work and on the side.</p>
+</div>
+
+<div class="work">
+<Section label="Sentry JS SDKs" id="sentry-js-sdks">
+  <svelte:fragment slot="rail">
+    <div class="tile sentry"><SentryLogo /></div>
+  </svelte:fragment>
+  <div class="project">
+    <p class="lead">
+      The SDKs that connect JavaScript applications to Sentry's error and performance monitoring.
+    </p>
+    <p>
+      Every Sentry user starts by adding an SDK to their app. Together with my team I maintain the
+      15 JavaScript SDKs that cover the popular frontend and backend frameworks, and I own the
+      Angular and Svelte SDKs.
+    </p>
+    <ul class="tags">{#each stacks.sentry as tag}<li>{tag}</li>{/each}</ul>
+    <div class="links mono">
+      <a href="https://github.com/getsentry/sentry-javascript" target="_blank" rel="noopener"
+        >GitHub ↗</a
+      >
+      <a href="https://sentry.io/welcome/" target="_blank" rel="noopener">sentry.io ↗</a>
     </div>
-  </PortfolioItem>
+  </div>
 </Section>
 
-<Separator />
-
-<Section styleClass="justify-center">
-  <PortfolioItem
-    title="Henri"
-    tags={[ANGULAR, TYPESCRIPT, PWA, FIREBASE, NODEJS, MATERIAL, TAILWIND]}
-    reverse
-  >
-    <img slot="image" src="/henri.png" alt="Henri logo" class="flex h-52 w-52 scale-x-[-1]" />
-    <div slot="description">
-      <p>
-        Henri is an app for professional and volunteering EMTs and paramedics to track shifts and
-        calls. By keeping track of shifts and calls, <TextLink href="https://henri.live" bold
-          >Henri</TextLink
-        > users receive statistics about their work, allowing insights into the nature of their work
-        or hobby.
-      </p>
-      <p>
-        Henri was intially started by <TextLink bold href="https://markusdeutsch.at"
-          >Markus Deutsch</TextLink
-        > who builds and maintains the Android app. I joined the project to build a platform-independent
-        progressive web app. It is based on Angular and relies on various Firebase (BaaS) services.
-      </p>
+<Section label="Henri" id="henri">
+  <svelte:fragment slot="rail">
+    <div class="tile"><img src="/henri.png" alt="" width="512" height="512" /></div>
+  </svelte:fragment>
+  <div class="project">
+    <p class="lead">
+      An app for professional and volunteer EMTs and paramedics to track their shifts and calls.
+    </p>
+    <p>
+      From that log, users get statistics about the nature of their work. Henri was started by <a
+        class="link"
+        href="https://markusdeutsch.at">Markus Deutsch</a
+      >, who builds the Android app. I joined to build a platform-independent progressive web app on
+      Angular and Firebase.
+    </p>
+    <ul class="tags">{#each stacks.henri as tag}<li>{tag}</li>{/each}</ul>
+    <div class="links mono">
+      <a href="https://henri.live" target="_blank" rel="noopener">henri.live ↗</a>
     </div>
-  </PortfolioItem>
+  </div>
 </Section>
 
-<Separator />
-
-<Section styleClass="justify-center">
-  <PortfolioItem title="Clifty" tags={[TYPESCRIPT, VITEST]}>
-    <img slot="image" src="/clifty-logo.png" alt="Henri logo" class="flex h-52 w-52 rounded-lg" />
-
-    <div slot="description">
-      <p>
-        The nifty little CLI execution and testing library for JavaScript :{')'}
-      </p>
-      <p>
-        I created <TextLink href="https://github.com/lms24/clifty" bold>Clifty</TextLink> while researching
-        how to best e2e-test a CLI application that requires user input. The few options out there didn't
-        impress me, so like any over-motivated software engineer, I decided to <TextLink
-          href="https://www.npmjs.com/package/clifty"
-          bold>publish my own</TextLink
-        >.
-      </p>
+<Section label="Clifty" id="clifty">
+  <svelte:fragment slot="rail">
+    <div class="tile full"><img src="/clifty-logo.png" alt="" width="1024" height="1024" /></div>
+  </svelte:fragment>
+  <div class="project">
+    <p class="lead">A small library for running and testing CLI applications in JavaScript.</p>
+    <p>
+      I wrote Clifty while looking for a good way to end-to-end test a CLI that asks for user input.
+      The existing options didn't convince me, so I published my own.
+    </p>
+    <ul class="tags">{#each stacks.clifty as tag}<li>{tag}</li>{/each}</ul>
+    <div class="links mono">
+      <a href="https://github.com/lms24/clifty" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.npmjs.com/package/clifty" target="_blank" rel="noopener">npm ↗</a>
     </div>
-  </PortfolioItem>
+  </div>
 </Section>
 
-<Separator />
-
-<Section styleClass="justify-center">
-  <PortfolioItem title="JSR" tags={[JAVA, JUNIT, HAMCREST, PIT, GRADLE]} reverse>
-    <img slot="image" src="/jsr.png" alt="Henri logo" class="flex h-52 w-52" />
-
-    <div slot="description">
-      <p>
-        JSR, short for <TextLink href="https://github.com/lms24/jsr" bold
-          >Java Test Suite Reduction Framework
-        </TextLink> is a tool for reducing the size of test suits in Java projects. This tool can be
-        used to identify and eliminate redundant or obsolete test cases in a test suite.
-      </p>
-      <p>
-        I created JSR while working over the course of my Master's thesis in which I explored test
-        suite reduction based on various coverage metrics and reduction algorithms. As part of my
-        thesis, I released JSR as an open source project and multiple TU Graz students extened it
-        with new features and algorithms as part of their theses.
-      </p>
+<Section label="JSR" id="jsr">
+  <svelte:fragment slot="rail">
+    <div class="tile mark mono" aria-hidden="true">jsr</div>
+  </svelte:fragment>
+  <div class="project">
+    <p class="lead">
+      The Java Test Suite Reduction framework finds redundant and obsolete test cases in Java test
+      suites.
+    </p>
+    <p>
+      I built JSR for my Master's thesis, which compared test suite reduction across coverage
+      metrics and reduction algorithms. It's open source, and several TU Graz students have since
+      extended it with new features and algorithms in their own theses.
+    </p>
+    <ul class="tags">{#each stacks.jsr as tag}<li>{tag}</li>{/each}</ul>
+    <div class="links mono">
+      <a href="https://github.com/lms24/jsr" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
-  </PortfolioItem>
+  </div>
 </Section>
+</div>
+
+<style>
+  /* Rail: logo tile under the project name */
+  .tile {
+    width: 112px;
+    aspect-ratio: 1;
+    margin-top: 16px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--chip);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .tile img {
+    width: 72%;
+    height: 72%;
+    object-fit: contain;
+  }
+  .tile.full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .tile.sentry {
+    color: var(--fg);
+  }
+  .tile.sentry :global(svg) {
+    width: 50%;
+  }
+  .tile.mark {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+  }
+
+  /* Body */
+  .project {
+    display: grid;
+    gap: 12px;
+    max-width: 62ch;
+  }
+  .project p {
+    margin: 0;
+  }
+  .project p:not(.lead) {
+    color: var(--muted);
+    font-size: 15px;
+  }
+  .lead {
+    font-size: 17px;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+  .tags {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tags li {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--chip);
+    color: var(--muted);
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    font-size: 12.5px;
+  }
+  .links a {
+    color: var(--muted);
+    transition: color 150ms ease;
+  }
+  .links a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 760px) {
+    /* On phones the rail turns into a compact header: tile left, name right */
+    .work :global(.rail) {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      column-gap: 14px;
+      align-items: center;
+    }
+    .tile {
+      width: 56px;
+      margin-top: 0;
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .work :global(.rail h2) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .work :global(.sec) {
+      gap: 16px;
+    }
+  }
+</style>

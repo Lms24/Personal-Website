@@ -1,16 +1,40 @@
 <script lang="ts">
-  import H1 from '$lib/components/h1.svelte';
-  import Section from '$lib/components/section.svelte';
+  import Section from '$lib/components/Section.svelte';
 </script>
 
-<Section styleClass="md:flex-col">
-  <H1>Imprint</H1>
-  <div class="flex flex-col gap-4">
-      <p>
-        <strong>Responsible for content:</strong> Lukas Stracke
-      </p>
-      <p>
-        <strong>Address:</strong> 1220, Vienna, Austria
-      </p>
-  </div>
+<svelte:head>
+  <title>Imprint · Lukas Stracke</title>
+</svelte:head>
+
+<div class="page-intro"><h1 class="page-title">Imprint</h1></div>
+
+<Section label="Details">
+  <dl>
+    <dt class="label">Responsible for content</dt>
+    <dd>Lukas Stracke</dd>
+    <dt class="label">Address</dt>
+    <dd>1220 Vienna, Austria</dd>
+  </dl>
 </Section>
+
+<style>
+  dl {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 8px 16px;
+    margin: 0;
+  }
+  dd {
+    margin: 0;
+  }
+  @media (max-width: 760px) {
+    dl {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    dd {
+      margin-bottom: 12px;
+    }
+  }
+</style>
