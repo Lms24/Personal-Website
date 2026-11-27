@@ -16,7 +16,9 @@ const config = {
   extensions: ['.svelte', '.md'],
 
   kit: {
-    adapter: adapter(),
+    // adapter-vercel 3.x only infers runtimes for Node 16–20 and throws on newer
+    // versions, so the runtime has to be named explicitly.
+    adapter: adapter({ runtime: 'nodejs26.x' }),
     files: {
       lib: './src/lib'
     }
