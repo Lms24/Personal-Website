@@ -1,10 +1,9 @@
-import type { PlaywrightTestConfig } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 
-const config: PlaywrightTestConfig = {
-	webServer: {
-		command: 'npm run build && npm run preview',
-		port: 4173
-	}
-};
-
-export default config;
+export default defineConfig({
+  testDir: 'tests',
+  webServer: {
+    command: 'yarn build && yarn preview',
+    port: 4173
+  }
+});

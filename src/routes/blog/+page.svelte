@@ -1,9 +1,10 @@
 <script lang="ts">
-  import Row from '$lib/components/Row.svelte';
-  import Section from '$lib/components/Section.svelte';
+  import { resolve } from '$app/paths';
+  import Row from '#lib/components/Row.svelte';
+  import Section from '#lib/components/Section.svelte';
   import type { PageData } from './$types';
 
-  export let data: PageData;
+  let { data }: { data: PageData } = $props();
 
   const fmt = (d: Date) => d.toISOString().slice(0, 10);
 </script>
@@ -18,8 +19,12 @@
 </div>
 
 <Section label="Posts">
-  {#each data.blogposts as post}
-    <Row title={post.meta.title} href={`/blog/${post.slug}`} aside={fmt(post.meta.date)} />
+  {#each data.blogposts as post (post.slug)}
+    <Row
+      title={post.meta.title}
+      href={resolve('/blog/[slug]', { slug: post.slug })}
+      aside={fmt(post.meta.date)}
+    />
   {:else}
     <p class="empty">No posts yet.</p>
   {/each}

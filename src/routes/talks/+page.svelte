@@ -110,7 +110,7 @@
 </div>
 
 <ol class="talks">
-  {#each talks as talk}
+  {#each talks as talk (talk.id)}
     <li class="talk" id={talk.id}>
       <div class="when">
         <time class="mono" datetime={talk.date}>{talk.date}</time>
@@ -121,10 +121,18 @@
         <h2>{talk.title}</h2>
         <p>{talk.description}</p>
         <div class="links mono">
-          {#if talk.slides}<a href={talk.slides} target="_blank" rel="noopener">Slides ↗</a>{/if}
-          {#if talk.video}<a href={talk.video} target="_blank" rel="noopener">Video ↗</a>{/if}
-          {#if talk.event}<a href={talk.event} target="_blank" rel="noopener">Event ↗</a>{/if}
-          {#if talk.post}<a href={talk.post} target="_blank" rel="noopener">Blog post ↗</a>{/if}
+          {#if talk.slides}<a href={talk.slides} target="_blank" rel="external noopener">
+              Slides ↗
+            </a>{/if}
+          {#if talk.video}<a href={talk.video} target="_blank" rel="external noopener">
+              Video ↗
+            </a>{/if}
+          {#if talk.event}<a href={talk.event} target="_blank" rel="external noopener">
+              Event ↗
+            </a>{/if}
+          {#if talk.post}<a href={talk.post} target="_blank" rel="external noopener">
+              Blog post ↗
+            </a>{/if}
         </div>
       </div>
     </li>

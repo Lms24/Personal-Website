@@ -2,10 +2,11 @@
   import '../app.css';
   import Footer from './footer.svelte';
   import Header from './header.svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
-  let activeRoute: string;
-  $: activeRoute = $page.route.id?.split('/')[1] || '';
+  let { children } = $props();
+
+  let activeRoute = $derived(page.route.id?.split('/')[1] || '');
 </script>
 
 <svelte:head>
@@ -15,7 +16,7 @@
 <div class="page wrap">
   <Header {activeRoute} />
   <main>
-    <slot />
+    {@render children()}
   </main>
   <Footer />
 </div>

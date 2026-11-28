@@ -28,7 +28,9 @@
     background: transparent;
     color: var(--muted);
     cursor: pointer;
-    transition: color 150ms ease, background-color 150ms ease;
+    transition:
+      color 150ms ease,
+      background-color 150ms ease;
   }
   .toggle:hover {
     color: var(--fg);

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Section from '$lib/components/Section.svelte';
-  import SentryLogo from '$lib/components/sentry.svelte';
+  import Section from '#lib/components/Section.svelte';
+  import SentryLogo from '#lib/components/sentry.svelte';
   import {
     ANGULAR,
     FIREBASE,
@@ -22,13 +22,24 @@
     TYPESCRIPT,
     VITEST,
     VUE
-  } from '$lib/misc/tags';
-  import type { Tag } from '$lib/misc/tags';
+  } from '#lib/misc/tags.ts';
+  import type { Tag } from '#lib/misc/tags.ts';
 
   const names = (tags: Tag[]) => tags.map((t) => t.name);
 
   const stacks = {
-    sentry: names([TYPESCRIPT, JAVASCRIPT, NODEJS, ANGULAR, SVELTE, VUE, JEST, PLAYWRIGHT, NX, LERNA]),
+    sentry: names([
+      TYPESCRIPT,
+      JAVASCRIPT,
+      NODEJS,
+      ANGULAR,
+      SVELTE,
+      VUE,
+      JEST,
+      PLAYWRIGHT,
+      NX,
+      LERNA
+    ]),
     henri: names([ANGULAR, TYPESCRIPT, PWA, FIREBASE, NODEJS, MATERIAL, TAILWIND]),
     clifty: names([TYPESCRIPT, VITEST]),
     jsr: names([JAVA, JUNIT, HAMCREST, PIT, GRADLE])
@@ -45,89 +56,99 @@
 </div>
 
 <div class="work">
-<Section label="Sentry JS SDKs" id="sentry-js-sdks">
-  <svelte:fragment slot="rail">
-    <div class="tile sentry"><SentryLogo /></div>
-  </svelte:fragment>
-  <div class="project">
-    <p class="lead">
-      The SDKs that connect JavaScript applications to Sentry's error and performance monitoring.
-    </p>
-    <p>
-      Every Sentry user starts by adding an SDK to their app. Together with my team I maintain the
-      15 JavaScript SDKs that cover the popular frontend and backend frameworks, and I own the
-      Angular and Svelte SDKs.
-    </p>
-    <ul class="tags">{#each stacks.sentry as tag}<li>{tag}</li>{/each}</ul>
-    <div class="links mono">
-      <a href="https://github.com/getsentry/sentry-javascript" target="_blank" rel="noopener"
-        >GitHub ↗</a
-      >
-      <a href="https://sentry.io/welcome/" target="_blank" rel="noopener">sentry.io ↗</a>
+  <Section label="Sentry JS SDKs" id="sentry-js-sdks">
+    {#snippet rail()}
+      <div class="tile sentry"><SentryLogo /></div>
+    {/snippet}
+    <div class="project">
+      <p class="lead">
+        The SDKs that connect JavaScript applications to Sentry's error and performance monitoring.
+      </p>
+      <p>
+        Every Sentry user starts by adding an SDK to their app. Together with my team I maintain the
+        15 JavaScript SDKs that cover the popular frontend and backend frameworks, and I own the
+        Angular and Svelte SDKs.
+      </p>
+      <ul class="tags">
+        {#each stacks.sentry as tag (tag)}<li>{tag}</li>{/each}
+      </ul>
+      <div class="links mono">
+        <a href="https://github.com/getsentry/sentry-javascript" target="_blank" rel="noopener">
+          GitHub ↗
+        </a>
+        <a href="https://sentry.io/welcome/" target="_blank" rel="noopener">sentry.io ↗</a>
+      </div>
     </div>
-  </div>
-</Section>
+  </Section>
 
-<Section label="Henri" id="henri">
-  <svelte:fragment slot="rail">
-    <div class="tile"><img src="/henri.png" alt="" width="512" height="512" /></div>
-  </svelte:fragment>
-  <div class="project">
-    <p class="lead">
-      An app for professional and volunteer EMTs and paramedics to track their shifts and calls.
-    </p>
-    <p>
-      From that log, users get statistics about the nature of their work. Henri was started by <a
-        class="link"
-        href="https://markusdeutsch.at">Markus Deutsch</a
-      >, who builds the Android app. I joined to build a platform-independent progressive web app on
-      Angular and Firebase.
-    </p>
-    <ul class="tags">{#each stacks.henri as tag}<li>{tag}</li>{/each}</ul>
-    <div class="links mono">
-      <a href="https://henri.live" target="_blank" rel="noopener">henri.live ↗</a>
+  <Section label="Henri" id="henri">
+    {#snippet rail()}
+      <div class="tile"><img src="/henri.png" alt="" width="512" height="512" /></div>
+    {/snippet}
+    <div class="project">
+      <p class="lead">
+        An app for professional and volunteer EMTs and paramedics to track their shifts and calls.
+      </p>
+      <p>
+        From that log, users get statistics about the nature of their work. Henri was started by <a
+          class="link"
+          href="https://markusdeutsch.at"
+        >
+          Markus Deutsch
+        </a>, who builds the Android app. I joined to build a platform-independent progressive web
+        app on Angular and Firebase.
+      </p>
+      <ul class="tags">
+        {#each stacks.henri as tag (tag)}<li>{tag}</li>{/each}
+      </ul>
+      <div class="links mono">
+        <a href="https://henri.live" target="_blank" rel="noopener">henri.live ↗</a>
+      </div>
     </div>
-  </div>
-</Section>
+  </Section>
 
-<Section label="Clifty" id="clifty">
-  <svelte:fragment slot="rail">
-    <div class="tile full"><img src="/clifty-logo.png" alt="" width="1024" height="1024" /></div>
-  </svelte:fragment>
-  <div class="project">
-    <p class="lead">A small library for running and testing CLI applications in JavaScript.</p>
-    <p>
-      I wrote Clifty while looking for a good way to end-to-end test a CLI that asks for user input.
-      The existing options didn't convince me, so I published my own.
-    </p>
-    <ul class="tags">{#each stacks.clifty as tag}<li>{tag}</li>{/each}</ul>
-    <div class="links mono">
-      <a href="https://github.com/lms24/clifty" target="_blank" rel="noopener">GitHub ↗</a>
-      <a href="https://www.npmjs.com/package/clifty" target="_blank" rel="noopener">npm ↗</a>
+  <Section label="Clifty" id="clifty">
+    {#snippet rail()}
+      <div class="tile full"><img src="/clifty-logo.png" alt="" width="1024" height="1024" /></div>
+    {/snippet}
+    <div class="project">
+      <p class="lead">A small library for running and testing CLI applications in JavaScript.</p>
+      <p>
+        I wrote Clifty while looking for a good way to end-to-end test a CLI that asks for user
+        input. The existing options didn't convince me, so I published my own.
+      </p>
+      <ul class="tags">
+        {#each stacks.clifty as tag (tag)}<li>{tag}</li>{/each}
+      </ul>
+      <div class="links mono">
+        <a href="https://github.com/lms24/clifty" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.npmjs.com/package/clifty" target="_blank" rel="noopener">npm ↗</a>
+      </div>
     </div>
-  </div>
-</Section>
+  </Section>
 
-<Section label="JSR" id="jsr">
-  <svelte:fragment slot="rail">
-    <div class="tile mark mono" aria-hidden="true">jsr</div>
-  </svelte:fragment>
-  <div class="project">
-    <p class="lead">
-      The Java Test Suite Reduction framework finds redundant and obsolete test cases in Java test
-      suites.
-    </p>
-    <p>
-      I built JSR for my Master's thesis, which compared test suite reduction across coverage
-      metrics and reduction algorithms. It's open source, and several TU Graz students have since
-      extended it with new features and algorithms in their own theses.
-    </p>
-    <ul class="tags">{#each stacks.jsr as tag}<li>{tag}</li>{/each}</ul>
-    <div class="links mono">
-      <a href="https://github.com/lms24/jsr" target="_blank" rel="noopener">GitHub ↗</a>
+  <Section label="JSR" id="jsr">
+    {#snippet rail()}
+      <div class="tile mark mono" aria-hidden="true">jsr</div>
+    {/snippet}
+    <div class="project">
+      <p class="lead">
+        The Java Test Suite Reduction framework finds redundant and obsolete test cases in Java test
+        suites.
+      </p>
+      <p>
+        I built JSR for my Master's thesis, which compared test suite reduction across coverage
+        metrics and reduction algorithms. It's open source, and several TU Graz students have since
+        extended it with new features and algorithms in their own theses.
+      </p>
+      <ul class="tags">
+        {#each stacks.jsr as tag (tag)}<li>{tag}</li>{/each}
+      </ul>
+      <div class="links mono">
+        <a href="https://github.com/lms24/jsr" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
     </div>
-  </div>
-</Section>
+  </Section>
 </div>
 
 <style>

@@ -1,7 +1,16 @@
 <script lang="ts">
-  /** Text shown at the top of the left rail */
-  export let label: string;
-  export let id: string | undefined = undefined;
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    /** Text shown at the top of the left rail */
+    label: string;
+    id?: string;
+    /** Extra content in the rail, below the label */
+    rail?: Snippet;
+    children: Snippet;
+  }
+
+  let { label, id, rail, children }: Props = $props();
 </script>
 
 <!--
@@ -11,9 +20,9 @@
 <section class="sec" {id}>
   <div class="rail">
     <h2 class="label">{label}</h2>
-    <slot name="rail" />
+    {@render rail?.()}
   </div>
-  <div class="body"><slot /></div>
+  <div class="body">{@render children()}</div>
 </section>
 
 <style>

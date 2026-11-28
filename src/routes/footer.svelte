@@ -1,6 +1,10 @@
+<script lang="ts">
+  import { resolve } from '$app/paths';
+</script>
+
 <footer class="mono">
   <span>© Lukas Stracke, {new Date().getFullYear()}</span>
-  <a href="/imprint">Imprint</a>
+  <a href={resolve('/imprint')}>Imprint</a>
 </footer>
 
 <style>
